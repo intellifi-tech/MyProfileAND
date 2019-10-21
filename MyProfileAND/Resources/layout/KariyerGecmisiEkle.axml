@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<RelativeLayout
+		android:paddingLeft="16dp"
+		android:paddingBottom="6dp"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="64dp"
+		android:id="@+id/relativeLayout1">
+		<TextView
+			android:layout_centerInParent="true"
+			android:textSize="18sp"
+			android:textColor="#000000"
+			android:text="Yeni Kariyer"
+			android:textStyle="bold"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/textView1" />
+		<ImageButton
+			android:layout_centerVertical="true"
+			android:tint="#000"
+			android:scaleType="centerInside"
+			android:background="@drawable/butonbackground"
+			android:layout_alignParentLeft="true"
+			android:src="?android:attr/actionModeCloseDrawable"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/ımageButton1" />
+	</RelativeLayout>
+	<LinearLayout
+		android:background="#EEEEEE"
+		android:orientation="horizontal"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:id="@+id/linearLayout1" />
+	<LinearLayout
+		android:paddingTop="20dp"
+		android:paddingLeft="20dp"
+		android:paddingRight="20dp"
+		android:orientation="vertical"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/linearLayout2">
+		<RelativeLayout
+			android:background="@drawable/logininputbg"
+			android:layout_marginBottom="10dp"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="50dp"
+			android:id="@+id/relativeLayout1">
+		<ImageView
+			android:paddingTop="13dp"
+			android:paddingBottom="13dp"
+			android:src="@mipmap/tower"
+			android:layout_width="30dp"
+			android:layout_height="50dp"
+			android:id="@+id/ımageView2"
+			android:scaleType="centerInside"
+			android:tint="#979797"
+			android:layout_marginLeft="10dp" />
+		<EditText
+			android:textCursorDrawable="@null"
+			android:textColor="#000"
+			android:background="@null"
+			android:hint="Şirket"
+			android:inputType="textEmailAddress"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_toRightOf="@id/ımageView2"
+			android:id="@+id/editText1"
+			android:layout_marginLeft="6.0dp" />
+		</RelativeLayout>
+		<RelativeLayout
+			android:background="@drawable/logininputbg"
+			android:layout_marginBottom="10dp"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="50dp"
+			android:id="@+id/relativeLayout1">
+		<ImageView
+			android:paddingTop="10dp"
+			android:paddingBottom="10dp"
+			android:src="@drawable/light_2"
+			android:layout_width="30dp"
+			android:layout_height="50dp"
+			android:id="@+id/ımageView2"
+			android:scaleType="centerInside"
+			android:tint="#979797"
+			android:layout_marginLeft="10dp" />
+		<EditText
+			android:textCursorDrawable="@null"
+			android:textColor="#000"
+			android:background="@null"
+			android:hint="Title"
+			android:inputType="textEmailAddress"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_toRightOf="@id/ımageView2"
+			android:id="@+id/editText2"
+			android:layout_marginLeft="6.0dp" />
+		</RelativeLayout>
+		<LinearLayout
+			android:weightSum="100"
+			android:orientation="horizontal"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/linearLayout3">
+			<RelativeLayout
+				android:layout_marginRight="2.5dp"
+				android:background="@drawable/logininputbg"
+				android:layout_marginBottom="10dp"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:layout_weight="50"
+				android:layout_width="0dp"
+				android:layout_height="50dp"
+				android:id="@+id/relativeLayout1">
+			<ImageView
+				android:paddingTop="10dp"
+				android:paddingBottom="10dp"
+				android:src="@drawable/calender"
+				android:layout_width="30dp"
+				android:layout_height="50dp"
+				android:id="@+id/ımageView2"
+				android:scaleType="centerInside"
+				android:tint="#979797"
+				android:layout_marginLeft="10dp" />
+			<TextView
+				android:gravity="center_vertical"
+				android:textSize="18dp"
+				android:textCursorDrawable="@null"
+				android:textColor="#000"
+				android:background="@null"
+				android:hint="Giriş Tarihi"
+				android:inputType="textEmailAddress"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_toRightOf="@id/ımageView2"
+				android:id="@+id/bastarih"
+				android:layout_marginLeft="6.0dp" />
+			</RelativeLayout>
+			<RelativeLayout
+				android:layout_marginLeft="2.5dp"
+				android:background="@drawable/logininputbg"
+				android:layout_marginBottom="10dp"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:layout_weight="50"
+				android:layout_width="0dp"
+				android:layout_height="50dp"
+				android:id="@+id/relativeLayout1">
+			<ImageView
+				android:paddingTop="10dp"
+				android:paddingBottom="10dp"
+				android:src="@drawable/calender"
+				android:layout_width="30dp"
+				android:layout_height="50dp"
+				android:id="@+id/ımageView2"
+				android:scaleType="centerInside"
+				android:tint="#979797"
+				android:layout_marginLeft="10dp" />
+			<TextView
+				android:gravity="center_vertical"
+				android:textSize="18dp"
+				android:textCursorDrawable="@null"
+				android:textColor="#000"
+				android:background="@null"
+				android:hint="Çıkış Tarihi"
+				android:inputType="textEmailAddress"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_toRightOf="@id/ımageView2"
+				android:id="@+id/bittarihi"
+				android:layout_marginLeft="6.0dp" />
+			</RelativeLayout>
+		</LinearLayout>
+	
+		<Button
+			android:background="@drawable/roundedlacivertbuttonbg"
+			android:textColor="#fff"
+			android:textAllCaps="false"
+			android:text="Kaydet"
+			android:textSize="18sp"
+			android:layout_width="match_parent"
+			android:layout_height="50dp"
+			android:id="@+id/button1"
+			android:layout_alignParentBottom="true"
+			android:layout_marginBottom="20dp"
+			android:layout_marginTop="8dp" />
+	
+	
+	
+	</LinearLayout>
+</LinearLayout>

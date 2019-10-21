@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:card_view="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+	android:layout_width="wrap_content"
+	android:layout_height="207dp"
+	android:background="@null">
+	<android.support.v7.widget.CardView
+		android:id="@+id/card_view"
+		android:layout_width="180dp"
+		android:layout_height="200dp"
+		android:layout_gravity="center"
+		card_view:cardCornerRadius="6dp"
+		card_view:cardUseCompatPadding="false"
+		card_view:cardPreventCornerOverlap="false"
+		android:layout_marginBottom="5dp"
+		android:layout_marginTop="2dp"
+		android:layout_marginLeft="5dp"
+		android:layout_marginRight="5dp"
+		card_view:cardElevation="5dp">
+		<LinearLayout
+			android:orientation="horizontal"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:id="@+id/linearLayout1">
+			<RelativeLayout
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:id="@+id/relativeLayout1">
+				<FFImageLoading.Views.ImageViewAsync
+					android:background="#eee"
+					android:scaleType="centerCrop"
+					android:src="@mipmap/cover_vector3"
+					android:layout_width="match_parent"
+					android:layout_height="65dp"
+					android:id="@+id/ımageView1" />
+				<FFImageLoading.Views.ImageViewAsync
+					android:id="@+id/imgPortada_item2"
+					android:scaleType="centerCrop"
+					android:layout_width="80dp"
+					android:layout_height="80dp"
+					android:src="@drawable/auser"
+					android:layout_centerHorizontal="true"
+					android:layout_marginTop="25dp" />
+				<LinearLayout
+					android:orientation="vertical"
+					android:minWidth="25px"
+					android:minHeight="25px"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:layout_below="@id/imgPortada_item2"
+					android:id="@+id/linearLayout2" >
+					<TextView
+						android:layout_marginTop="6dp"
+						android:textColor="#000"
+						android:textSize="16dp"
+						android:gravity="center_horizontal"
+						android:text="..."
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:id="@+id/textView1" />
+					<TextView
+						android:layout_marginTop="6dp"
+						android:gravity="center_horizontal"
+						android:text="...."
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:id="@+id/textView2" />
+					<Button
+						android:layout_marginBottom="3dp"
+						android:layout_marginTop="3dp"
+						android:layout_marginLeft="10dp"
+						android:layout_marginRight="10dp"
+						android:background="@null"
+						android:textColor="@color/colorPrimaryDark"
+						android:text="Takip Et"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:id="@+id/button1" />
+				</LinearLayout>
+			</RelativeLayout>
+		</LinearLayout>
+	</android.support.v7.widget.CardView>
+</LinearLayout>

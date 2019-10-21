@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+    android:background="#fff">
+    <RelativeLayout
+			android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:layout_height="60dp"
+			android:id="@+id/toolbarlinear"
+			android:animateLayoutChanges="true"
+			android:minWidth="25px"
+			android:minHeight="25px">
+			<include
+				layout="@layout/app_bar"
+				android:elevation="4dp"/>
+		<TextView
+			android:ellipsize="marquee"
+			android:focusable="true"
+			android:focusableInTouchMode="true"
+			android:maxLines="1"
+			android:scrollHorizontally="true"
+			android:text="Yeni Etkinlik"
+			android:layout_centerInParent="true"
+			android:layout_width="match_parent"
+			android:layout_height="50dp"
+			android:gravity="center"
+			android:textSize="18dp"
+			android:textColor="#1a237e"
+			android:id="@+id/textView1"
+			android:layout_gravity="center"/>
+		</RelativeLayout>
+		<LinearLayout
+		  android:layout_below="@+id/toolbarlinear"
+		  android:background="#eee"
+		  android:orientation="horizontal"
+		  android:minWidth="25px"
+		  android:minHeight="25px"
+		  android:layout_width="match_parent"
+		  android:layout_height="1dp"
+		  android:id="@+id/toolbarline" />
+	<LinearLayout
+		android:layout_below="@id/toolbarlinear"
+		android:layout_above="@id/linearLayout3"
+		android:layout_margin="10dp"
+		android:orientation="vertical"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/linearLayout1">
+
+		<EditText
+			android:layout_width="match_parent"
+			android:hint="Etkinlik Açıklaması"
+			android:background="@drawable/logininputbg"
+			android:textSize="16dp"
+			android:layout_height="140dp"
+			android:padding="10dp"
+			android:gravity="left|top"
+			android:layout_marginTop="10dp"
+			android:inputType="textMultiLine"
+			android:id="@+id/textInputEditText2" />
+		<LinearLayout
+			android:layout_above="@+id/linearLayout3"
+			android:layout_marginTop="10dp"
+			android:layout_marginBottom="10dp"
+			android:weightSum="100"
+			android:orientation="horizontal"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/linearLayout3">
+			<RelativeLayout
+				android:layout_marginRight="2.5dp"
+				android:background="@drawable/logininputbg"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:layout_weight="50"
+				android:layout_width="0dp"
+				android:layout_height="50dp"
+				android:id="@+id/relativeLayout1">
+				<ImageView
+					android:paddingTop="10dp"
+					android:paddingBottom="10dp"
+					android:src="@drawable/time"
+					android:layout_width="30dp"
+					android:layout_height="50dp"
+					android:id="@+id/ımageView2"
+					android:scaleType="centerInside"
+					android:tint="#979797"
+					android:layout_marginLeft="10dp" />
+				<TextView
+					android:gravity="center_vertical"
+					android:textSize="16dp"
+					android:textCursorDrawable="@null"
+					android:textColor="#000"
+					android:background="@null"
+					android:hint="Giriş Saati"
+					android:inputType="textEmailAddress"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:layout_toRightOf="@id/ımageView2"
+					android:id="@+id/bastarih"
+					android:layout_marginLeft="6.0dp" />
+			</RelativeLayout>
+			<RelativeLayout
+				android:layout_marginLeft="2.5dp"
+				android:background="@drawable/logininputbg"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:layout_weight="50"
+				android:layout_width="0dp"
+				android:layout_height="50dp"
+				android:id="@+id/relativeLayout1">
+				<ImageView
+					android:paddingTop="10dp"
+					android:paddingBottom="10dp"
+					android:src="@drawable/time"
+					android:layout_width="30dp"
+					android:layout_height="50dp"
+					android:id="@+id/ımageView2"
+					android:scaleType="centerInside"
+					android:tint="#979797"
+					android:layout_marginLeft="10dp" />
+				<TextView
+					android:gravity="center_vertical"
+					android:textSize="16dp"
+					android:textCursorDrawable="@null"
+					android:textColor="#000"
+					android:background="@null"
+					android:hint="Çıkış Saati"
+					android:inputType="textEmailAddress"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:layout_toRightOf="@id/ımageView2"
+					android:id="@+id/bittarihi"
+					android:layout_marginLeft="6.0dp" />
+			</RelativeLayout>
+		</LinearLayout>
+		<RelativeLayout
+			android:layout_marginTop="7.5dp"
+			android:layout_centerHorizontal="true"
+			android:layout_alignParentBottom="true"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:id="@+id/relativeLayout3">
+			<ImageView
+				android:layout_centerHorizontal="true"
+				android:layout_alignParentBottom="true"
+				android:id="@+id/imgPortada_item2"
+				android:scaleType="centerInside"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"/>
+			<LinearLayout
+				android:paddingLeft="10dp"
+				android:paddingRight="10dp"
+				android:background="@drawable/buttonbg1"
+				android:layout_centerInParent="true"
+				android:orientation="horizontal"
+				android:layout_width="wrap_content"
+				android:layout_height="50dp"
+				android:id="@+id/fotoeklelinear" >
+				<ImageView
+					android:tint="#888"
+					android:scaleType="centerInside"
+					android:src="@drawable/photo"
+					android:layout_width="25dp"
+					android:layout_height="50dp"
+					android:minWidth="25px"
+					android:minHeight="25px"
+					android:id="@+id/ımageView3" />
+				<TextView
+					android:textSize="16dp"
+					android:gravity="center_vertical"
+					android:text="Etkinlik katılımınıza bir fotoğraf ekleyin."
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:id="@+id/textView3" />
+			</LinearLayout>
+		</RelativeLayout>
+		
+	</LinearLayout>
+
+    <LinearLayout
+       
+        android:orientation="vertical"
+         android:layout_margin="10dp"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/linearLayout3"
+        android:gravity="center"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:text="OLUŞTUR"
+            android:textColor="#ffffff"
+            android:textSize="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/roundedlacivertbuttonbg"
+            android:gravity="center"
+            android:id="@+id/button3" />
+    </LinearLayout>
+
+</RelativeLayout>

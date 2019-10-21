@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	android:orientation="vertical"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:background="#fff"
+    android:layout_height="match_parent">
+	<LinearLayout
+		android:orientation="vertical"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/linearLayout2" >
+		<RelativeLayout
+				android:orientation="vertical"
+				android:layout_width="match_parent"
+				android:layout_height="60dp"
+				android:id="@+id/toolbarlinear"
+				android:animateLayoutChanges="true"
+				android:minWidth="25px"
+				android:minHeight="25px">
+				<include
+					layout="@layout/app_bar"
+					android:elevation="4dp"/>
+			<TextView
+				android:text="Yeni Etkinlik"
+				android:layout_centerInParent="true"
+				android:layout_width="match_parent"
+				android:layout_height="50dp"
+				android:gravity="center"
+				android:textSize="18dp"
+				android:textColor="#1a237e"
+				android:id="@+id/textView1"
+				android:layout_gravity="center"/>
+			<ImageButton
+				android:tint="@color/colorPrimaryDark"
+				android:background="@null"
+				android:scaleType="centerInside"
+				android:layout_alignParentRight="true"
+				android:src="@drawable/post_add"
+				android:layout_width="62dp"
+				android:layout_height="62dp"
+				android:id="@+id/ımageButton2" />
+			</RelativeLayout>
+		<LinearLayout
+		  android:background="#eee"
+		  android:orientation="horizontal"
+		  android:minWidth="25px"
+		  android:minHeight="25px"
+		  android:layout_width="match_parent"
+		  android:layout_height="1dp"
+		  android:id="@+id/toolbarline" />
+		<android.support.v7.widget.CardView
+				android:layout_marginTop="10dp"
+				android:layout_marginLeft="24dp"
+				android:layout_marginRight="24dp"
+				android:minHeight="50dp"
+				android:id="@+id/card_view"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				app:cardCornerRadius="5dp"
+				app:cardElevation="10dp"
+				app:cardUseCompatPadding="false"
+				app:cardPreventCornerOverlap="false">
+				<LinearLayout
+				   android:background="#fff"
+				   android:orientation="horizontal"
+				   android:minWidth="25px"
+				   android:minHeight="25px"
+				   android:layout_width="match_parent"
+				   android:layout_height="wrap_content"
+				   android:id="@+id/linearLayout1"
+					android:elevation="10dp">
+				<ImageView
+					android:padding="10dp"
+					android:tint="#484848"
+					android:src="@drawable/search"
+					android:layout_width="50dp"
+					android:layout_height="50dp"
+					android:id="@+id/ımageView2" />
+				<EditText
+					android:background="@null"
+					android:textSize="17dp"
+					android:inputType="textPersonName"
+					android:maxLines="1"
+					android:hint="Bir etkinlik adı yazmayı deneyin..."
+					android:gravity="center_vertical"
+					android:textColor="#484848"
+					android:minHeight="50dp"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:id="@+id/aratext" />
+			</LinearLayout>
+		</android.support.v7.widget.CardView>
+		<RelativeLayout
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:id="@+id/relativeLayout1">
+			<TextView
+				android:visibility="invisible"
+				android:text="Katılmak istediğiniz etkinliği listede göremezseniz devam et butonuna basarak yeni bir tane oluşturabilirsiniz."
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+				android:paddingLeft="50dp"
+				android:paddingRight="50dp"
+				android:gravity="center"
+				android:id="@+id/textView2" />
+			<ListView
+				android:background="#fff"
+				android:divider="@null"
+				android:dividerHeight="0dp"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:id="@+id/listView1"
+				android:layout_marginTop="6.5dp" />
+		</RelativeLayout>
+	</LinearLayout>
+	<ImageButton
+		android:scaleType="centerInside"
+		android:elevation="15dp"
+		android:tint="#1a237e"
+		android:background="@drawable/beyazbadge"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentRight="true"
+		android:src="@drawable/arrow_right"
+		android:layout_width="60dp"
+		android:layout_height="60dp"
+		android:id="@+id/ımageButton1"
+		android:layout_marginBottom="20dp"
+		android:layout_marginRight="20dp" />
+</RelativeLayout>

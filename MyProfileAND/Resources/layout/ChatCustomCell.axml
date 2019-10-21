@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:background="@null">
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout1"
+        android:layout_marginRight="0.0dp"
+        android:paddingRight="50dp">
+		<LinearLayout
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:id="@+id/mesajHazneLinear"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:layout_marginTop="15dp"
+			android:layout_marginLeft="15dp"
+			android:background="@drawable/chatgelenmesajbalon"
+			android:layout_alignParentLeft="true">
+			<TextView
+				android:text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit,"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/textView1"
+				android:paddingTop="8dp"
+				android:paddingLeft="35dp"
+				android:textColor="#FFFFFF"
+				android:paddingRight="8dp"
+				android:textSize="15dp" />
+			<TextView
+				android:text="21:52"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/textView2"
+				android:gravity="right|center_vertical"
+				android:textColor="#FFFFFF"
+				android:layout_marginTop="0.0dp"
+				android:textSize="11dp"
+				android:paddingRight="5dp"
+				android:layout_gravity="right" />
+		</LinearLayout>
+        <FFImageLoading.Views.ImageViewAsync
+            android:id="@+id/imgPortada_item"
+            android:scaleType="centerCrop"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/auser"
+            android:visibility="visible" />
+    </RelativeLayout>
+</LinearLayout>

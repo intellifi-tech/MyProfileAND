@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	<RelativeLayout
+			android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:layout_height="60dp"
+			android:id="@+id/toolbarlinear"
+			android:animateLayoutChanges="true"
+			android:minWidth="25px"
+			android:minHeight="25px">
+			<include
+				layout="@layout/app_bar"
+				android:elevation="4dp"/>
+			<TextView
+				android:textSize="18sp"
+				android:textColor="#000000"
+				android:layout_centerInParent="true"
+				android:text="Etkinlik Detayları"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/textView1" />
+			<LinearLayout
+				android:layout_alignParentRight="true"
+				android:orientation="horizontal"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:id="@+id/linearLayout1" >
+			<ImageButton
+				android:tint="@color/colorPrimaryDark"
+				android:scaleType="centerInside"
+				android:background="@null"
+				android:src="@drawable/flash"
+				android:layout_width="40dp"
+				android:layout_height="match_parent"
+				android:id="@+id/etkinligekatil" />
+			<ImageButton
+				android:tint="@color/colorPrimaryDark"
+				android:scaleType="centerInside"
+				android:background="@null"
+				android:src="@drawable/users"
+				android:layout_width="40dp"
+				android:layout_height="match_parent"
+				android:id="@+id/etkinlikkatilimci" />
+			<ImageButton
+				android:tint="@color/colorPrimaryDark"
+				android:scaleType="centerInside"
+				android:background="@null"
+				android:src="@drawable/share_2"
+				android:layout_width="40dp"
+				android:layout_height="match_parent"
+				android:id="@+id/paylasbutton" />
+			</LinearLayout>
+		</RelativeLayout>
+	<LinearLayout
+			android:background="#EEEEEE"
+			android:orientation="horizontal"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:layout_below="@+id/toolbarlinear"
+		    android:id="@+id/toolbarline" />
+	<ScrollView
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/scrollView1" >
+		<LinearLayout
+			android:orientation="vertical"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:id="@+id/linearLayout1" >
+			<LinearLayout
+				android:background="@null"
+				android:orientation="vertical"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:id="@+id/linearLayout1">
+				<LinearLayout
+					android:layout_marginTop="5.5dp"
+					android:layout_marginRight="10dp"
+					android:layout_marginLeft="10dp"
+					android:orientation="horizontal"
+					android:minWidth="25px"
+					android:minHeight="25px"
+					android:layout_width="match_parent"
+					android:layout_height="50dp"
+					android:id="@+id/linearLayout2"
+					android:layout_marginBottom="5.0dp">
+					<FFImageLoading.Views.ImageViewAsync
+						android:id="@+id/imgPortada_item2"
+						android:layout_marginTop="0.0dp"
+						android:layout_gravity="center_vertical"
+						android:scaleType="centerCrop"
+						android:layout_width="45dp"
+						android:layout_height="45dp"
+						android:src="@mipmap/me_photo"
+						android:layout_marginLeft="0dp" />
+					<LinearLayout
+						android:paddingTop="5dp"
+						android:layout_marginRight="10dp"
+						android:layout_marginLeft="10dp"
+						android:orientation="vertical"
+						android:minWidth="25px"
+						android:minHeight="25px"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:weightSum="100"
+						android:id="@+id/linearLayout3">
+						<TextView
+							android:textSize="16dp"
+							android:textColor="#000"
+							android:text="Mesut Polat"
+							android:textAppearance="?android:attr/textAppearanceMedium"
+							android:layout_width="match_parent"
+							android:layout_height="0dp"
+							android:layout_weight="50"
+							android:id="@+id/textView3" />
+						<TextView
+							android:ellipsize="marquee"
+							android:fadingEdge="horizontal"
+							android:marqueeRepeatLimit="marquee_forever"
+							android:scrollHorizontally="true"
+							android:singleLine="true"
+							android:textSize="12dp"
+							android:text="CEO - IntelliFi Tech"
+							android:textAppearance="?android:attr/textAppearanceSmall"
+							android:layout_width="match_parent"
+							android:layout_height="0dp"
+							android:layout_weight="50"
+							android:id="@+id/textView4" />
+					</LinearLayout>
+				</LinearLayout>
+				<FFImageLoading.Views.ImageViewAsync
+					android:scaleType="centerCrop"
+					android:src="@mipmap/fuar_halk"
+					android:layout_width="match_parent"
+					android:layout_height="256.0dp"
+					android:id="@+id/ımageView1" />
+				<TextView
+					android:textColor="#000"
+					android:text="Enerji Girişimleri Fuarı"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:id="@+id/etkinliktitle"
+					android:layout_marginTop="6.0dp"
+					android:layout_marginRight="10dp"
+					android:layout_marginLeft="10dp" />
+				<TextView
+					android:layout_marginRight="10dp"
+					android:layout_marginLeft="10dp"
+					android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+					android:textAppearance="?android:attr/textAppearanceSmall"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:id="@+id/textView2" />
+				<LinearLayout
+					android:paddingLeft="10dp"
+					android:paddingRight="10dp"
+					android:layout_marginRight="10dp"
+					android:layout_marginLeft="10dp"
+					android:background="@drawable/maviovalbadge"
+					android:layout_marginBottom="5dp"
+					android:orientation="horizontal"
+					android:minWidth="25px"
+					android:minHeight="25px"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:id="@+id/linearLayout4"
+					android:layout_marginTop="4.5dp">
+					<ImageView
+						android:tint="#fff"
+						android:paddingRight="4dp"
+						android:src="@drawable/time"
+						android:layout_width="25dp"
+						android:layout_height="25dp"
+						android:id="@+id/ımageView2" />
+					<TextView
+						android:gravity="center_vertical"
+						android:textColor="#fff"
+						android:text="12:00 - 20:00"
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						android:id="@+id/textView6"
+						android:layout_marginLeft="2dp" />
+				</LinearLayout>
+			</LinearLayout>
+			<TextView
+				android:textColor="#000"
+				android:layout_marginTop="10dp"
+				android:paddingLeft="10dp"
+				android:paddingRight="10dp"
+				android:text="Yorumlar (256)"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/textView7" />
+			<LinearLayout
+				android:layout_marginTop="10dp"
+				android:paddingLeft="10dp"
+				android:paddingRight="10dp"
+				android:orientation="vertical"
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/yorumlinear" />
+		</LinearLayout>
+	</ScrollView>
+</LinearLayout>

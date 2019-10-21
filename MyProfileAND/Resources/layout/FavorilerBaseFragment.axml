@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	android:orientation="vertical"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@android:color/background_light">
+	<FrameLayout
+		android:minWidth="25px"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:id="@+id/takipettiklerimHazne"
+		android:layout_marginTop="0dp" />
+	<LinearLayout
+		android:orientation="vertical"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/linearLayout1">
+	<android.support.design.widget.TabLayout
+				android:layout_below="@+id/toolbarline"
+				android:id="@+id/sliding_tabsIcon"
+				android:background="@android:color/transparent"
+				app:tabIndicatorColor="#1a237e"
+				app:tabIndicatorHeight="2dp"
+				app:tabSelectedTextColor="#f0114c"
+				app:tabMode="fixed"
+				app:tabGravity="fill"
+				app:tabTextColor="#909090"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
+			<android.support.v4.view.ViewPager
+				android:layout_below="@+id/sliding_tabsIcon"
+				android:id="@+id/viewpagerIcon"
+				android:background="#ffffff"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent" />
+	</LinearLayout>
+	<ImageButton
+		android:scaleType="centerInside"
+		android:elevation="15dp"
+		android:tint="#1a237e"
+		android:background="@drawable/beyazbadge"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentRight="true"
+		android:src="@drawable/flash"
+		android:layout_width="60dp"
+		android:layout_height="60dp"
+		android:id="@+id/ımageButton1"
+		android:layout_marginBottom="20dp"
+		android:layout_marginRight="20dp" />
+</RelativeLayout>

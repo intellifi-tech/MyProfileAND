@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MyProfile</string>
+    <string name="action_settings">Ayarlar</string>
+   <string name="transition_test">test</string>
+  <string name="GoogleKey">AIzaSyD6F8c4Mf4a4lMLj_XLYvLKnBd_SP4_jVE</string>
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	   <RelativeLayout
+			android:orientation="vertical"
+			android:layout_width="match_parent"
+			android:layout_height="60dp"
+			android:id="@+id/toolbarlinear"
+			android:animateLayoutChanges="true"
+			android:minWidth="25px"
+			android:minHeight="25px">
+	   <include
+				layout="@layout/app_bar"
+				android:elevation="4dp"/>
+		<TextView
+			android:ellipsize="marquee"
+			android:focusable="true"
+			android:focusableInTouchMode="true"
+			android:maxLines="1"
+			android:scrollHorizontally="true"
+			android:text="Katılımcılar"
+			android:layout_centerInParent="true"
+			android:layout_width="wrap_content"
+			android:layout_height="50dp"
+			android:gravity="center"
+			android:textSize="18dp"
+			android:textColor="#1a237e"
+			android:id="@+id/textView1"
+			android:layout_gravity="center"/>
+	    </RelativeLayout>
+		<LinearLayout
+		  android:layout_below="@+id/toolbarlinear"
+		  android:background="#eee"
+		  android:orientation="horizontal"
+		  android:minWidth="25px"
+		  android:minHeight="25px"
+		  android:layout_width="match_parent"
+		  android:layout_height="1dp"
+		  android:id="@+id/toolbarline" />
+	<ListView
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/listView1" />
+</LinearLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+	android:background="#000"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	<com.github.chrisbanes.photoview.PhotoView 
+		android:id="@+id/iv_photo"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_gravity="center"
+		android:src="@mipmap/fuar_halk"
+		android:transitionName="test" />
+	<RelativeLayout
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="64dp"
+		android:id="@+id/toolbarlinear"
+		android:animateLayoutChanges="true"
+		android:minWidth="25px"
+		android:minHeight="25px">
+		<android.support.v7.widget.Toolbar
+			android:minHeight="?android:attr/actionBarSize"
+			android:background="#50000000"
+			android:minWidth="25px"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/toolbar1" />
+		<ImageButton
+			android:padding="18dp"
+			android:tint="#fff"
+			android:scaleType="centerInside"
+			android:background="@null"
+			android:src="@drawable/favorite"
+			android:layout_width="64dp"
+			android:layout_height="match_parent"
+			android:layout_alignParentRight="true"
+			android:id="@+id/begenbutton" />
+	</RelativeLayout>
+	<RelativeLayout
+		android:background="#50000000"
+		android:layout_alignParentBottom="true"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="60dp"
+		android:id="@+id/relativeLayout1" >
+		<LinearLayout
+			android:orientation="horizontal"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="wrap_content"
+			android:layout_height="match_parent"
+			android:id="@+id/begenihazne" >
+			<ImageView
+				android:padding="10dp"
+				android:src="@mipmap/like_icon_img"
+				android:layout_width="50dp"
+				android:layout_height="match_parent"
+				android:id="@+id/ımageView1" />
+			<TextView
+				android:textSize="15dp"
+				android:textColor="#fff"
+				android:gravity="center_vertical"
+				android:text="50k kişi beğendi"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:id="@+id/textView1" />
+		</LinearLayout>
+		<LinearLayout
+			android:weightSum="100"
+			android:layout_alignParentRight="true"
+			android:orientation="horizontal"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="100dp"
+			android:layout_height="match_parent"
+			android:id="@+id/linearLayout2" >
+			<ImageButton
+				android:tint="#fff"
+				android:background="@null"
+				android:scaleType="centerInside"
+				android:src="@drawable/profile_circle"
+				android:layout_weight="50"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:id="@+id/ımageButton2" />
+			<ImageButton
+				android:tint="#fff"
+				android:background="@null"
+				android:scaleType="centerInside"
+				android:src="@drawable/delete"
+				android:layout_weight="50"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:id="@+id/ımageButton1"
+				android:layout_marginLeft="2.0dp" />
+		</LinearLayout>
+	</RelativeLayout>
+</RelativeLayout>

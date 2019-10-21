@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+	<LinearLayout
+		android:layout_marginTop="16dp"
+		android:layout_marginRight="20dp"
+		android:layout_marginLeft="0dp"
+		android:orientation="horizontal"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/linearLayout1">
+		<ImageView
+			android:tint="#888"
+			android:paddingBottom="20dp"
+			android:src="@drawable/user"
+			android:layout_width="50dp"
+			android:layout_height="50dp"
+			android:id="@+id/ımageView1" />
+		<LinearLayout
+			android:orientation="vertical"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/linearLayout2">
+			<TextView
+				android:textSize="18sp"
+				android:textColor="#000000"
+				android:text="Hakkında"
+				android:textStyle="bold"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/textView1" />
+			<TextView
+				android:textSize="14sp"
+				android:layout_marginTop="6dp"
+				android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip..."
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:minHeight="100dp"
+				android:id="@+id/textView2" />
+		</LinearLayout>
+	</LinearLayout>
+	<LinearLayout
+		android:layout_marginRight="20dp"
+		android:layout_marginLeft="20dp"
+		android:background="#EEEEEE"
+		android:orientation="vertical"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="0.5dp"
+		android:id="@+id/linearLayout3" />
+
+	<LinearLayout
+		android:layout_marginTop="16dp"
+		android:layout_marginRight="20dp"
+		android:layout_marginLeft="0dp"
+		android:orientation="horizontal"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/linearLayout1">
+		<ImageView
+			android:tint="#888"
+			android:paddingBottom="20dp"
+			android:src="@drawable/calender"
+			android:layout_width="50dp"
+			android:layout_height="50dp"
+			android:id="@+id/ımageView1" />
+		<LinearLayout
+			android:orientation="vertical"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/linearLayout2">
+			<TextView
+				android:textSize="18sp"
+				android:textColor="#000000"
+				android:text="Doğum Tarihi"
+				android:textStyle="bold"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/textView1" />
+			<TextView
+				android:textSize="14sp"
+				android:layout_marginTop="6dp"
+				android:text="12 Aralık 1994"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/dogumtarihitxt" />
+		</LinearLayout>
+	</LinearLayout>
+	<LinearLayout
+		android:layout_marginTop="20dp"
+		android:layout_marginRight="20dp"
+		android:layout_marginLeft="20dp"
+		android:background="#EEEEEE"
+		android:orientation="vertical"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="0.5dp"
+		android:id="@+id/linearLayout3" />
+
+	<LinearLayout
+		android:layout_marginTop="16dp"
+		android:layout_marginRight="20dp"
+		android:layout_marginLeft="0dp"
+		android:orientation="horizontal"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/linearLayout1">
+		<ImageView
+			android:tint="#888"
+			android:paddingBottom="20dp"
+			android:src="@drawable/home"
+			android:layout_width="50dp"
+			android:layout_height="50dp"
+			android:id="@+id/ımageView1" />
+		<LinearLayout
+			android:orientation="vertical"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/linearLayout2">
+			<TextView
+				android:textSize="18sp"
+				android:textColor="#000000"
+				android:text="Şirket"
+				android:textStyle="bold"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/textView1" />
+			<TextView
+				android:textSize="14sp"
+				android:layout_marginTop="6dp"
+				android:text="IntelliFi Yazılım Danışmanlık ve Reklam Hizmetleri"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/sirkettxt" />
+		</LinearLayout>
+	</LinearLayout>
+	<LinearLayout
+		android:layout_marginTop="20dp"
+		android:layout_marginRight="20dp"
+		android:layout_marginLeft="20dp"
+		android:background="#EEEEEE"
+		android:orientation="vertical"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="0.5dp"
+		android:id="@+id/linearLayout3" />
+
+	<LinearLayout
+		android:layout_marginTop="16dp"
+		android:layout_marginRight="20dp"
+		android:layout_marginLeft="0dp"
+		android:orientation="horizontal"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/linearLayout1">
+		<ImageView
+			android:tint="#888"
+			android:paddingBottom="20dp"
+			android:src="@drawable/award"
+			android:layout_width="50dp"
+			android:layout_height="50dp"
+			android:id="@+id/ımageView1" />
+		<LinearLayout
+			android:orientation="vertical"
+			android:minWidth="25px"
+			android:minHeight="25px"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/linearLayout2">
+			<TextView
+				android:textSize="18sp"
+				android:textColor="#000000"
+				android:text="Sektör"
+				android:textStyle="bold"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/textView1" />
+			<TextView
+				android:textSize="14sp"
+				android:layout_marginTop="6dp"
+				android:text="Yazılım Sektörü"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/sektortxt" />
+		</LinearLayout>
+	</LinearLayout>
+	<LinearLayout
+		android:layout_marginTop="20dp"
+		android:layout_marginRight="20dp"
+		android:layout_marginLeft="20dp"
+		android:background="#EEEEEE"
+		android:orientation="vertical"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="0.5dp"
+		android:id="@+id/linearLayout3" />
+
+	<TextView
+		android:layout_marginTop="20dp"
+		android:layout_marginRight="20dp"
+		android:layout_marginLeft="20dp"
+		android:textSize="18sp"
+		android:textColor="#000000"
+		android:text="Deneyimler"
+		android:textStyle="bold"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/textView1" />
+	<LinearLayout
+		android:orientation="vertical"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/kariyerlinear"
+		android:layout_marginTop="20dp"
+		android:layout_marginRight="20dp"
+		android:layout_marginLeft="20dp" />
+
+</LinearLayout>
