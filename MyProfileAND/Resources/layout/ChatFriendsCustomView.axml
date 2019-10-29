@@ -27,7 +27,9 @@
 		android:layout_toRightOf="@id/imgPortada_item"
 		android:layout_toLeftOf="@id/linearLayout4">
 		<TextView
-			android:text="Mesut Polat"
+            android:maxLines="1"
+            android:ellipsize="end"
+			android:text="Lorem Impus"
 			android:textAppearance="?android:attr/textAppearanceSmall"
 			android:layout_width="match_parent"
 			android:layout_height="0dp"
@@ -39,6 +41,9 @@
 			android:gravity="center_vertical|bottom"
 			android:layout_marginBottom="6.5dp" />
 		<TextView
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textColor="#fff"
 			android:text="Lorem impus sit dolor amed Lorem impus sit dolor amed "
 			android:textAppearance="?android:attr/textAppearanceSmall"
 			android:layout_width="match_parent"

@@ -18,7 +18,7 @@ using Newtonsoft.Json;
 
 namespace MyProfileAND.Login
 {
-    [Activity(Label = "MyProile")]
+    [Activity(Label = "MyProfile")]
     public class LoginBaseActivty : Android.Support.V7.App.AppCompatActivity
     {
         EditText EmailText, SifreText;

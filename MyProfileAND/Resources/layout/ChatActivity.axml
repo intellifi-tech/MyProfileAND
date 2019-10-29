@@ -73,14 +73,17 @@
 				</RelativeLayout>
 			</RelativeLayout>
 		</LinearLayout>
-		<TextView
-				android:textSize="18sp"
-				android:textColor="#000000"
-				android:layout_centerInParent="true"
-				android:text="Kullanıcı Adı"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:id="@+id/usernametxt" />
+        <TextView
+            android:gravity="center_horizontal"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:layout_centerInParent="true"
+            android:text="Kullanıcı Adı"
+            android:layout_width="217.5dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/usernametxt" />
 	</RelativeLayout>
 	<FrameLayout
 		android:minWidth="25px"

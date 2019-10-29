@@ -12,6 +12,7 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
+using MyProfileAND.Favoriler.MevcutEtkinligeKatil;
 using MyProfileAND.GenericClass;
 using MyProfileAND.WebServiceHelper;
 using Newtonsoft.Json;
@@ -24,7 +25,7 @@ namespace MyProfileAND.Favoriler.YeniEtkinlikOlustur
         ImageButton Kapat;
         Button Kaydet;
         EditText Titlee;
-        YeniEtkinlikOlusturBaseActivity0 YeniEtkinlikOlusturBaseActivity02;
+        MevcutEtkinlikActivity YeniEtkinlikOlusturBaseActivity02;
         #endregion
         public override void OnActivityCreated(Bundle savedInstanceState)
         {
@@ -33,7 +34,7 @@ namespace MyProfileAND.Favoriler.YeniEtkinlikOlustur
             Dialog.Window.Attributes.WindowAnimations = Resource.Style.action_sheet_animation;
         }
         
-        public YeniEtkinlikDialogFragment(YeniEtkinlikOlusturBaseActivity0 YeniEtkinlikOlusturBaseActivity01)
+        public YeniEtkinlikDialogFragment(MevcutEtkinlikActivity YeniEtkinlikOlusturBaseActivity01)
         {
             YeniEtkinlikOlusturBaseActivity02 = YeniEtkinlikOlusturBaseActivity01;
         }

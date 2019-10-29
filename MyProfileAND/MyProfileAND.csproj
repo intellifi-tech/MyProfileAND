@@ -76,6 +76,7 @@
     <Compile Include="Favoriler\Global\GlobalBaseFragment.cs" />
     <Compile Include="Favoriler\Global\GlobalRecyclerviewAdepter.cs" />
     <Compile Include="Favoriler\Global\GlobalRecyclerViewDataModel.cs" />
+    <Compile Include="Favoriler\MevcutEtkinligeKatil\MevcutEtkinlikActivity.cs" />
     <Compile Include="Favoriler\Takipciler\TakipcilerBaseFragment.cs" />
     <Compile Include="Favoriler\Takipciler\TakipcilerRecyclerviewAdepter.cs" />
     <Compile Include="Favoriler\Takipciler\TakipcilerRecyclerViewDataModel.cs" />
@@ -86,7 +87,6 @@
     <Compile Include="Favoriler\TakipEttiklerim\KisiBazliListe\KisiBazliListeRecyclerViewDataModel.cs" />
     <Compile Include="Favoriler\YeniEtkinlikOlustur\YeniEtkinlikDialogFragment.cs" />
     <Compile Include="Favoriler\YeniEtkinlikOlustur\YeniEtkinlikOlusturBaseActivity.cs" />
-    <Compile Include="Favoriler\YeniEtkinlikOlustur\YeniEtkinlikOlusturBaseActivity0.cs" />
     <Compile Include="GenericClass\BitmapHelpers.cs" />
     <Compile Include="GenericClass\CenterZoomLayoutManager.cs" />
     <Compile Include="GenericClass\CustomLoadingViewHelper.cs" />
@@ -137,7 +137,9 @@
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\YeniEtkinlikOlusturBaseActivity0.xml" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.2</Version>
@@ -1787,9 +1789,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\YeniEtkinlikOlusturBaseActivity.axml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\layout\YeniEtkinlikOlusturBaseActivity0.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\YeniYorumEkleView.axml" />

@@ -17,12 +17,13 @@ using FFImageLoading.Transformations;
 using FFImageLoading.Views;
 using MyProfileAND.Profil;
 using MyProfileAND.Profil.FarkliKullanici;
+using MyProfileAND.WebServiceHelper;
 
 namespace MyProfileAND.Favoriler.Global
 {
     class GlobalRecyclerViewHolder : RecyclerView.ViewHolder
     {
-        public TextView KullaniciAdSoyad, KullaniciTitle, EventTitle, EventAciklama, GirisSaati, CikisSaati;
+        public TextView KullaniciAdSoyad, KullaniciTitle, EventTitle, EventAciklama, GirisSaati, CikisSaati, KatilimSayisi;
         public ImageViewAsync KullaniciProfilFoto,EventFoto;
         public GlobalRecyclerViewHolder(View itemView, Action<int> listener) : base(itemView)
         {
@@ -34,6 +35,7 @@ namespace MyProfileAND.Favoriler.Global
             EventFoto = itemView.FindViewById<ImageViewAsync>(Resource.Id.ımageView1);
             GirisSaati = itemView.FindViewById<TextView>(Resource.Id.textView6);
             CikisSaati = itemView.FindViewById<TextView>(Resource.Id.textView7);
+            KatilimSayisi = itemView.FindViewById<TextView>(Resource.Id.textView5);
             itemView.Click += (sender, e) => listener(base.Position);
         }
     }
@@ -110,6 +112,38 @@ namespace MyProfileAND.Favoriler.Global
                 //viewholder.GirisSaati.SetTextColor(Color.White);
                 //viewholder.CikisSaati.SetTextColor(Color.White);
             }
+            KatilimciSayisiniGetir(eventt.user_attended_event.event_id.ToString(), viewholder.KatilimSayisi);
+        }
+        void KatilimciSayisiniGetir(string EventID, TextView KatilimciSayiText)
+        {
+            new System.Threading.Thread(new System.Threading.ThreadStart(delegate
+            {
+                WebService webService = new WebService();
+                var Donuss = webService.OkuGetir("event/" + EventID + "/show");
+                if (Donuss != null)
+                {
+                    try
+                    {
+                        var aaaa = Donuss.ToString();
+                        var Countt = Newtonsoft.Json.JsonConvert.DeserializeObject<RootObject>(aaaa).user_attended_event.Count;
+                        BaseActivity.RunOnUiThread(delegate ()
+                        {
+                            KatilimciSayiText.Text = Countt.ToString();
+                        });
+                    }
+                    catch
+                    {
+                        BaseActivity.RunOnUiThread(delegate ()
+                        {
+                            KatilimciSayiText.Text = "-";
+                        });
+                    }
+                }
+            })).Start();
+        }
+        public class RootObject
+        {
+            public List<object> user_attended_event { get; set; }
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)

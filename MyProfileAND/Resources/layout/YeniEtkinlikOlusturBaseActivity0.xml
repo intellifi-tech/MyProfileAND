@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout
 	android:orientation="vertical"
 	xmlns:android="http://schemas.android.com/apk/res/android"
@@ -52,39 +52,34 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:id="@+id/toolbarline" />
-        <LinearLayout
-            android:orientation="horizontal"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:layout_width="match_parent"
-            android:layout_height="68.5dp"
-            android:id="@+id/linearLayout3" >
-            <ImageView
-                android:padding="10dp"
-                android:src="@drawable/light_2"
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:id="@+id/ımageView1"
-                android:layout_marginLeft="6.0dp" />
-            <TextView
-                android:gravity="center_vertical"
-                android:textSize="14sp"
-                android:text="Katılmak istediğiniz etkinliği listeden seçip devam edebilirsiniz. Aradığınız etkinlik listede mevcut değilse yeni bir etkinlik oluşturabilirsiniz."
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/textView2"
-                android:layout_marginRight="8.5dp" />
-        </LinearLayout>
-        <ListView
-            android:background="#fff"
-            android:divider="@null"
-            android:dividerHeight="0dp"
+        <RelativeLayout
             android:minWidth="25px"
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/listView1"/>
+            android:id="@+id/relativeLayout1">
+            <TextView
+                android:visibility="invisible"
+                android:text="Katılmak istediğiniz etkinliği listede göremezseniz devam et butonuna basarak yeni bir tane oluşturabilirsiniz."
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:gravity="center"
+                android:id="@+id/textView2" />
+            <ListView
+                android:background="#fff"
+                android:divider="@null"
+                android:dividerHeight="0dp"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/listView1"
+                android:layout_marginTop="6.5dp" />
+        </RelativeLayout>
     </LinearLayout>
 	<ImageButton
 		android:scaleType="centerInside"

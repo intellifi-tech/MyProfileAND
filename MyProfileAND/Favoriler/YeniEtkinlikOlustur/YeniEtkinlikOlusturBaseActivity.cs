@@ -9,6 +9,7 @@ using Android.Content;
 using Android.Content.PM;
 using Android.Graphics;
 using Android.Locations;
+using Android.Media;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.V4.Content;
@@ -17,6 +18,7 @@ using Android.Widget;
 using FFImageLoading;
 using FFImageLoading.Transformations;
 using FFImageLoading.Views;
+using MyProfileAND.Favoriler.MevcutEtkinligeKatil;
 using MyProfileAND.GenericClass;
 using MyProfileAND.GenericUI;
 using MyProfileAND.WebServiceHelper;
@@ -212,16 +214,31 @@ namespace MyProfileAND.Favoriler.YeniEtkinlikOlustur
                             {
                                 streamReader.BaseStream.CopyTo(memstream);
                                 bytes = memstream.ToArray();
-                                base64String = Convert.ToBase64String(bytes);
-                                Stream srm = memstream;
-                                var FilePath = System.IO.Path.Combine(documentsFolder(), "PPImagege.jpg");
-                                File.WriteAllBytes(FilePath, bytes);
-                                if (File.Exists(FilePath))
+
+                                var Guidee = Guid.NewGuid().ToString();
+                                var FilePath = System.IO.Path.Combine(documentsFolder(), Guidee + ".jpg");
+                                System.IO.File.WriteAllBytes(FilePath, memstream.ToArray());
+                                if (System.IO.File.Exists(FilePath))
                                 {
-                                    ProfilFotografi.SetScaleType(ImageView.ScaleType.CenterCrop);
-                                    ProfilFotografi.SetImageURI(uri);
-                                    FotoEkleHazne.Visibility = ViewStates.Gone;
+                                    var newbytess = ResizeImageAndroid(FilePath, bytes, 600, 600);
+                                    if (newbytess != null)
+                                    {
+                                        base64String = Convert.ToBase64String(newbytess);
+                                        var a = base64String;
+                                        ProfilFotografi.SetScaleType(ImageView.ScaleType.CenterCrop);
+                                        ProfilFotografi.SetImageURI(uri);
+                                        FotoEkleHazne.Visibility = ViewStates.Gone;
+                                    }
                                 }
+
+                                //base64String = Convert.ToBase64String(bytes);
+                                //Stream srm = memstream;
+                                //var FilePath = System.IO.Path.Combine(documentsFolder(), "PPImagege.jpg");
+                                //File.WriteAllBytes(FilePath, bytes);
+                                //if (File.Exists(FilePath))
+                                //{
+                                   
+                                //}
                             }
                         }
                     }
@@ -244,13 +261,85 @@ namespace MyProfileAND.Favoriler.YeniEtkinlikOlustur
 
         }
 
- 
+        public byte[] ResizeImageAndroid(string FileDesc, byte[] imageData, float width, float height)
+        {
+
+            ExifInterface oldExif = new ExifInterface(FileDesc);
+            String exifOrientation = oldExif.GetAttribute(ExifInterface.TagOrientation);
 
 
+            // Load the bitmap 
+            Bitmap originalImage = BitmapFactory.DecodeByteArray(imageData, 0, imageData.Length);
+            //
+            float ZielHoehe = 0;
+            float ZielBreite = 0;
+            //
+            var Hoehe = originalImage.Height;
+            var Breite = originalImage.Width;
 
-  
+            //
+            float NereyeRotate = 0;
+            if (Hoehe > Breite) // Höhe (71 für Avatar) ist Master
+            {
+                ZielHoehe = height;
+                float teiler = Hoehe / height;
+                ZielBreite = Breite / teiler;
+                NereyeRotate = 0;
+            }
+            else if (Hoehe < Breite) // Breite (61 für Avatar) ist Master
+            {
+                ZielBreite = width;
+                float teiler = Breite / width;
+                ZielHoehe = Hoehe / teiler;
+                NereyeRotate = -90;
+            }
+            else //EsitOlmaDurumu
+            {
+                ZielBreite = width;
+                ZielHoehe = height;
+                NereyeRotate = 0;
+            }
+            //
+            Bitmap resizedImage = Bitmap.CreateScaledBitmap(originalImage, (int)ZielBreite, (int)ZielHoehe, true);
+            //return rotateBitmap(resizedImage, 0);
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                resizedImage.Compress(Bitmap.CompressFormat.Jpeg, 100, ms);
+
+                var Guidee = Guid.NewGuid().ToString();
+                var FilePath = System.IO.Path.Combine(documentsFolder(), Guidee + ".jpg");
+                System.IO.File.WriteAllBytes(FilePath, ms.ToArray());
+                if (System.IO.File.Exists(FilePath))
+                {
+                    if (exifOrientation != null)
+                    {
+                        ExifInterface newExif = new ExifInterface(FilePath);
+                        newExif.SetAttribute(ExifInterface.TagOrientation, exifOrientation);
+                        newExif.SaveAttributes();
+                        var bytess = System.IO.File.ReadAllBytes(FilePath);
+
+                        System.IO.File.Delete(FileDesc);
+                        System.IO.File.Delete(FilePath);
+
+                        return bytess;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+                else
+                {
+                    return null;
+                }
+
+
+            }
+        }
+
         #region On Pause
-      
+
         #endregion
 
         #region  DataModel

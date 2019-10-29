@@ -15,6 +15,7 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using MyProfileAND.Favoriler.Global;
+using MyProfileAND.Favoriler.MevcutEtkinligeKatil;
 using MyProfileAND.Favoriler.Takipciler;
 using MyProfileAND.Favoriler.TakipEttiklerim;
 using MyProfileAND.Favoriler.YeniEtkinlikOlustur;
@@ -52,7 +53,7 @@ namespace MyProfileAND.Favoriler
 
         private void YeniEtkinlikOlustur_Click(object sender, EventArgs e)
         {
-            this.Activity.StartActivity(typeof(YeniEtkinlikOlusturBaseActivity0));
+            this.Activity.StartActivity(typeof(MevcutEtkinlikActivity));
         }
 
         void FnInitTabLayout()

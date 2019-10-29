@@ -154,22 +154,43 @@ namespace MyProfileAND.Profil
                             {
                                 streamReader.BaseStream.CopyTo(memstream);
                                 bytes = memstream.ToArray();
-                                string base64String = Convert.ToBase64String(bytes);
-                                Stream srm = memstream;
-                                var FilePath = System.IO.Path.Combine(documentsFolder(), "PPImagege.jpg");
-                                File.WriteAllBytes(FilePath, bytes);
-                                if (File.Exists(FilePath))
-                                {
-                                    if (requestCode == PickImageId)
-                                    {
-                                        FotoGuncelle(base64String, 0);
-                                    }
-                                    else
-                                    {
-                                        FotoGuncelle(base64String, 1);
-                                    }
 
+                                var Guidee = Guid.NewGuid().ToString();
+                                var FilePath = System.IO.Path.Combine(documentsFolder(), Guidee + ".jpg");
+                                System.IO.File.WriteAllBytes(FilePath, memstream.ToArray());
+                                if (System.IO.File.Exists(FilePath))
+                                {
+                                    var newbytess = ResizeImageAndroid(FilePath, bytes, 600, 600);
+                                    if (newbytess != null)
+                                    {
+                                        var base64String = Convert.ToBase64String(newbytess);
+                                        if (requestCode == PickImageId)
+                                        {
+                                            FotoGuncelle(base64String, 0);
+                                        }
+                                        else
+                                        {
+                                            FotoGuncelle(base64String, 1);
+                                        }
+                                    }
                                 }
+
+                                //string base64String = Convert.ToBase64String(bytes);
+                                //Stream srm = memstream;
+                                //var FilePath = System.IO.Path.Combine(documentsFolder(), "PPImagege.jpg");
+                                //File.WriteAllBytes(FilePath, bytes);
+                                //if (File.Exists(FilePath))
+                                //{
+                                //    if (requestCode == PickImageId)
+                                //    {
+                                //        FotoGuncelle(base64String, 0);
+                                //    }
+                                //    else
+                                //    {
+                                //        FotoGuncelle(base64String, 1);
+                                //    }
+
+                                //}
                             }
                         }
                     }
@@ -180,6 +201,88 @@ namespace MyProfileAND.Profil
                 
             }
         }
+
+
+        public byte[] ResizeImageAndroid(string FileDesc, byte[] imageData, float width, float height)
+        {
+
+            Android.Media.ExifInterface oldExif = new Android.Media.ExifInterface(FileDesc);
+            String exifOrientation = oldExif.GetAttribute(Android.Media.ExifInterface.TagOrientation);
+
+
+            // Load the bitmap 
+            Bitmap originalImage = BitmapFactory.DecodeByteArray(imageData, 0, imageData.Length);
+            //
+            float ZielHoehe = 0;
+            float ZielBreite = 0;
+            //
+            var Hoehe = originalImage.Height;
+            var Breite = originalImage.Width;
+
+            //
+            float NereyeRotate = 0;
+            if (Hoehe > Breite) // Höhe (71 für Avatar) ist Master
+            {
+                ZielHoehe = height;
+                float teiler = Hoehe / height;
+                ZielBreite = Breite / teiler;
+                NereyeRotate = 0;
+            }
+            else if (Hoehe < Breite) // Breite (61 für Avatar) ist Master
+            {
+                ZielBreite = width;
+                float teiler = Breite / width;
+                ZielHoehe = Hoehe / teiler;
+                NereyeRotate = -90;
+            }
+            else //EsitOlmaDurumu
+            {
+                ZielBreite = width;
+                ZielHoehe = height;
+                NereyeRotate = 0;
+            }
+            //
+            Bitmap resizedImage = Bitmap.CreateScaledBitmap(originalImage, (int)ZielBreite, (int)ZielHoehe, true);
+            //return rotateBitmap(resizedImage, 0);
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                resizedImage.Compress(Bitmap.CompressFormat.Jpeg, 100, ms);
+
+                var Guidee = Guid.NewGuid().ToString();
+                var FilePath = System.IO.Path.Combine(documentsFolder(), Guidee + ".jpg");
+                System.IO.File.WriteAllBytes(FilePath, ms.ToArray());
+                if (System.IO.File.Exists(FilePath))
+                {
+                    if (exifOrientation != null)
+                    {
+                        Android.Media.ExifInterface newExif = new Android.Media.ExifInterface(FilePath);
+                        newExif.SetAttribute(Android.Media.ExifInterface.TagOrientation, exifOrientation);
+                        newExif.SaveAttributes();
+                        var bytess = System.IO.File.ReadAllBytes(FilePath);
+
+                        System.IO.File.Delete(FileDesc);
+                        System.IO.File.Delete(FilePath);
+
+                        return bytess;
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+                else
+                {
+                    return null;
+                }
+
+
+            }
+        }
+
+
+
+
         void FotoGuncelle(string base644,int Durum)
         {
             WebService webService = new WebService();

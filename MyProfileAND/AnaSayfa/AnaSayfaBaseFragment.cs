@@ -56,7 +56,6 @@ namespace MyProfileAND.AnaSayfa
         {
             base.OnCreate(savedInstanceState);
         }
-
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             View RootView = inflater.Inflate(Resource.Layout.AnaSayfaBaseFragment, container, false);
@@ -88,7 +87,6 @@ namespace MyProfileAND.AnaSayfa
             MeId = DataBase.USER_INFO_GETIR()[0].id;
             return RootView;
         }
-
         private void MyLocationButton_Click(object sender, EventArgs e)
         {
             if (LastUserLocation != null)
@@ -115,7 +113,6 @@ namespace MyProfileAND.AnaSayfa
                 }
             }
         }
-
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
         {
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -194,7 +191,6 @@ namespace MyProfileAND.AnaSayfa
             }
 
         }
-
         public override void OnStop()
         {
             base.OnStop();
@@ -203,7 +199,6 @@ namespace MyProfileAND.AnaSayfa
                 FusedLocationProviderClient1.RemoveLocationUpdates(LocationCallback1);
             }
         }
-
         public override void OnPause()
         {
             base.OnPause();
@@ -213,14 +208,12 @@ namespace MyProfileAND.AnaSayfa
             //}
 
         }
-
         void OpenLoading()
         {
             CustomLoadingScreen1 = new CustomLoadingScreen("Konumunuz Alıyor...");
             //CustomLoadingScreen1.Cancelable = false;
             CustomLoadingScreen1.Show(this.Activity.SupportFragmentManager, "CustomLoadingScreen1");
         }
-
         bool KonumKontrol()
         {
             bool gps_enabled = false;
@@ -274,7 +267,6 @@ namespace MyProfileAND.AnaSayfa
         }
 
         #endregion
-
 
         #region UserLocationn
         Circle circleOptions;
@@ -741,7 +733,6 @@ namespace MyProfileAND.AnaSayfa
         }
 
         #endregion
-
 
         #region DataModels
 

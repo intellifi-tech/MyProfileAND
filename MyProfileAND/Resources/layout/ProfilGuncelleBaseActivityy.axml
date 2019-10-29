@@ -96,6 +96,7 @@
 				android:layout_height="wrap_content"
 				android:id="@+id/textView1" />
 			<EditText
+                android:maxLength="50"
 				android:text="Lorem Impus"
 				android:background="@null"
 				android:textSize="18sp"
@@ -152,6 +153,7 @@
 				android:layout_height="wrap_content"
 				android:id="@+id/textView1" />
 			<EditText
+                android:maxLength="50"
 				android:text="Lorem Impus"
 				android:background="@null"
 				android:textSize="18sp"
