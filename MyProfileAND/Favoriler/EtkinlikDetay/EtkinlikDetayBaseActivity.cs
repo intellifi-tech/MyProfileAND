@@ -17,6 +17,7 @@ using FFImageLoading;
 using FFImageLoading.Transformations;
 using FFImageLoading.Views;
 using MyProfileAND.Favoriler.EtkinlikDetay.EtkinlikKatilimcilari;
+using MyProfileAND.Favoriler.MevcutEtkinligeKatil;
 using MyProfileAND.Favoriler.YeniEtkinlikOlustur;
 using MyProfileAND.GenericClass;
 using MyProfileAND.GenericUI;
@@ -244,9 +245,6 @@ namespace MyProfileAND.Favoriler.EtkinlikDetay
             }
         }
         #endregion
-
-
-
 
         private void UserImage_Click(object sender, EventArgs e)
         {

@@ -16,6 +16,7 @@ using FFImageLoading.Views;
 using MyProfileAND.DataBasee;
 using MyProfileAND.GenericClass;
 using MyProfileAND.GenericUI;
+using MyProfileAND.Profil.ProfilDuzenle.GizlilikAyarlari;
 using MyProfileAND.WebServiceHelper;
 using Newtonsoft.Json;
 
@@ -28,7 +29,7 @@ namespace MyProfileAND.Profil.ProfilDuzenle
         EditText Biografi,SirketAdi,Titlee,AdText,SoyadText;
         TextView DogumTarihi, SektorlerSpin;
         ImageViewAsync ProfilFoto;
-        ImageButton KaydetButton;
+        ImageButton KaydetButton, Gizlilikbutton;
         List<KariyerGecmisi_RootObject> KariyerGecmisi_RootObject1 = new List<KariyerGecmisi_RootObject>();
         List<View> KariyerGecmisiViews = new List<View>();
         LinearLayout KariyerLinear;
@@ -53,6 +54,8 @@ namespace MyProfileAND.Profil.ProfilDuzenle
             KaydetButton = FindViewById<ImageButton>(Resource.Id.kaydetbutton);
             KariyerLinear = FindViewById<LinearLayout>(Resource.Id.kariyerlinear);
             YeniKariyerGecmisiEkleButton = FindViewById<ImageButton>(Resource.Id.ımageButton1);
+            Gizlilikbutton = FindViewById<ImageButton>(Resource.Id.gizlilikbutton);
+            Gizlilikbutton.Click += Gizlilikbutton_Click;
             YeniKariyerGecmisiEkleButton.Click += YeniKariyerGecmisiEkleButton_Click;
             Biografi.Text = "";
             SirketAdi.Text = "";
@@ -73,6 +76,12 @@ namespace MyProfileAND.Profil.ProfilDuzenle
                 SupportActionBar.Title = "";
                 toolbar.NavigationIcon.SetColorFilter(Android.Graphics.Color.Black, PorterDuff.Mode.SrcAtop);
             }
+        }
+
+        private void Gizlilikbutton_Click(object sender, EventArgs e)
+        {
+            var GizlilikDuzenleDialogFragment1 = new GizlilikDuzenleDialogFragment(this);
+            GizlilikDuzenleDialogFragment1.Show(this.SupportFragmentManager, "GizlilikDuzenleDialogFragment1");
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)

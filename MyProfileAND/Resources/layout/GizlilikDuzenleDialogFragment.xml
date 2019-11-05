@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingLeft="25dp"
+    android:paddingRight="25dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+		android:paddingLeft="16dp"
+		android:paddingBottom="6dp"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="64dp"
+		android:id="@+id/relativeLayout1">
+		<TextView
+			android:layout_centerInParent="true"
+			android:textSize="18sp"
+			android:textColor="#000000"
+			android:text="Gizlilik Ayarları"
+			android:textStyle="bold"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/textView1" />
+		<ImageButton
+			android:layout_centerVertical="true"
+			android:tint="#000"
+			android:scaleType="centerInside"
+			android:background="@drawable/butonbackground"
+			android:layout_alignParentLeft="true"
+			android:src="?android:attr/actionModeCloseDrawable"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/ımageButton1" />
+	</RelativeLayout>
+	<LinearLayout
+		android:background="#EEEEEE"
+		android:orientation="horizontal"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:id="@+id/linearLayout1" />
+    <RelativeLayout
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="37.5dp"
+        android:id="@+id/linearLayout1">
+        <ToggleButton
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toggleButton1" />
+        <TextView
+            android:gravity="center_vertical"
+            android:text="Haritada gösterme"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textView1"
+            android:layout_toLeftOf="@+id/toggleButton1" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="37.5dp"
+        android:id="@+id/linearLayout1">
+        <ToggleButton
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toggleButton2" />
+        <TextView
+            android:gravity="center_vertical"
+            android:text="Mesaj isteği kabul etme"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textView1"
+            android:layout_toLeftOf="@+id/toggleButton2" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="37.5dp"
+        android:id="@+id/linearLayout1">
+        <ToggleButton
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/toggleButton3" />
+        <TextView
+            android:gravity="center_vertical"
+            android:text="Takip isteği kabul etme"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textView1"
+            android:layout_toLeftOf="@+id/toggleButton3" />
+    </RelativeLayout>
+    <Button
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/roundedlacivertbuttonbg"
+        android:textColor="#fff"
+        android:textAllCaps="false"
+        android:text="Kaydet"
+        android:textSize="18sp"
+        android:layout_width="183.5dp"
+        android:layout_height="44.0dp"
+        android:id="@+id/button1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp" />
+</LinearLayout>

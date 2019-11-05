@@ -101,6 +101,7 @@ namespace MyProfileAND.AnaSayfa
 
         public void ListeyiYenile(List<NearbyUserCoordinate> YeniModel)
         {
+            
             MapDataModel1_KLON = YeniModel;
             MapDataModel1 = YeniModel.FindAll(item => item.IsShow == true);
             //mRecyclerView.HasFixedSize = true;
@@ -153,6 +154,19 @@ namespace MyProfileAND.AnaSayfa
         }
     }
 
+
+
+
+    public class UserPrivacy
+    {
+        public int id { get; set; }
+        public int user_id { get; set; }
+        public bool visibility_on_the_map { get; set; }
+        public bool no_message { get; set; }
+        public bool no_follow_up_request { get; set; }
+        public string created_at { get; set; }
+        public string updated_at { get; set; }
+    }
     public class User
     {
         public int id { get; set; }
@@ -174,6 +188,7 @@ namespace MyProfileAND.AnaSayfa
         public string package { get; set; }
         public string created_at { get; set; }
         public string updated_at { get; set; }
+        public UserPrivacy userPrivacy { get; set; }
     }
 
     public class NearbyUserCoordinate

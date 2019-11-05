@@ -288,8 +288,6 @@ namespace MyProfileAND.AnaSayfa
             LocationRequest1.SetSmallestDisplacement(10f);
         }
 
-
-
         internal class MyLocationCallBack : LocationCallback
         {
             private AnaSayfaBaseFragment AnaSayfaBaseFragment1;
@@ -496,7 +494,6 @@ namespace MyProfileAND.AnaSayfa
                 ListeHaznesi.Visibility = ViewStates.Visible;
             }
         }
-       
         #endregion
 
         void FillDataModel(LatLng latLng)
@@ -520,11 +517,35 @@ namespace MyProfileAND.AnaSayfa
                     var UserOlanlar = DonusModel.nearbyUserCoordinates.FindAll(item => item.user != null);
                     var BenHaric = UserOlanlar.FindAll(item => item.user.id.ToString() != MeId);
                     MapDataModel1 = BenHaric;
+                    //Gizlilik Ayarlarını geti
+                    MapDataModel1 = getUsersGizlilik(MapDataModel1);
+
+                    //Mapte Görünmek istemeyenleri Ayıkla
+                    MapDataModel1 = MapDataModel1.FindAll(item => item.user.userPrivacy.visibility_on_the_map == false);
+
                 }
             }
             SetupMapIfNeeded();
 
         }
+
+        List<NearbyUserCoordinate> getUsersGizlilik(List<NearbyUserCoordinate> BulunanKullanicilar)
+        {
+            for (int i = 0; i < BulunanKullanicilar.Count; i++)
+            {
+                WebService webService = new WebService();
+                var Donus = webService.OkuGetir("user/" + BulunanKullanicilar[i].user.id.ToString() + "/getUserPrivacySettings");
+                if (Donus != null)
+                {
+                    var aaa = Donus.ToString();
+                    var Ayarlarr = Newtonsoft.Json.JsonConvert.DeserializeObject<UserPrivacy>(Donus.ToString());
+                    BulunanKullanicilar[i].user.userPrivacy = Ayarlarr;
+                }
+            }
+            return BulunanKullanicilar;
+        }
+        
+
         private void ListeButon_Click(object sender, EventArgs e)
         {
             AcKapat();

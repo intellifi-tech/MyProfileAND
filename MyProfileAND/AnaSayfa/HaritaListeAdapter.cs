@@ -99,7 +99,17 @@ namespace MyProfileAND.AnaSayfa
                 }
                 else
                 {
-                    viewholder.TakipEt.Text = "Takip Et";
+                    //Takip isteği almak istiyorum
+                    if (item.user.userPrivacy.no_follow_up_request == false)
+                    {
+                        viewholder.TakipEt.Text = "Takip Et";
+                    }
+                    //Takip isteği almak istemiyorum
+                    else
+                    {
+                        viewholder.TakipEt.Visibility = ViewStates.Invisible;
+                        viewholder.TakipEt.Enabled = false;
+                    }
                 }
             }
         }

@@ -32,6 +32,7 @@ namespace MyProfileAND.DataBasee
             conn.CreateTable<USER_INFO>();
             conn.CreateTable<BEGENILEN_FOTOLAR>();
             conn.CreateTable<SON_KONUM_GUNCELLEMESI>();
+            conn.CreateTable<GIZLILIK>();
             conn.Close();
         }
 
@@ -91,7 +92,6 @@ namespace MyProfileAND.DataBasee
 
         }
         #endregion
-
 
         #region BEGENILEN_FOTOLAR
 
@@ -159,6 +159,63 @@ namespace MyProfileAND.DataBasee
         }
 
         public static bool SON_KONUM_GUNCELLEMESI_Guncelle(SON_KONUM_GUNCELLEMESI Tablo)
+        {
+            try
+            {
+                var conn = new SQLiteConnection(System.IO.Path.Combine(documentsFolder(), "MyProfile.db"), false);
+                conn.Update(Tablo);
+                conn.Close();
+                return true;
+            }
+            catch (Exception e)
+            {
+                string ee = e.ToString();
+                return false;
+            }
+
+        }
+        #endregion
+
+        #region GIZLILIK
+
+        public static bool GIZLILIK_EKLE(GIZLILIK GelenDoluTablo)
+        {
+            try
+            {
+                var conn = new SQLiteConnection(System.IO.Path.Combine(documentsFolder(), "MyProfile.db"), false);
+                conn.Insert(GelenDoluTablo);
+                conn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public static List<GIZLILIK> GIZLILIK_GETIR()
+        {
+            var conn = new SQLiteConnection(System.IO.Path.Combine(documentsFolder(), "MyProfile.db"), false);
+            var gelenler = conn.Query<GIZLILIK>("Select * From GIZLILIK");
+            conn.Close();
+            return gelenler;
+        }
+        public static bool GIZLILIK_TEMIZLE()
+        {
+            try
+            {
+                var conn = new SQLiteConnection(System.IO.Path.Combine(documentsFolder(), "MyProfile.db"), false);
+                conn.Query<GIZLILIK>("Delete From GIZLILIK");
+                conn.Close();
+                return true;
+            }
+            catch (Exception e)
+            {
+                string ee = e.ToString();
+                return false;
+            }
+
+        }
+        public static bool GIZLILIK_Guncelle(GIZLILIK Tablo)
         {
             try
             {

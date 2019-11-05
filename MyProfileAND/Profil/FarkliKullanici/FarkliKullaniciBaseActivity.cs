@@ -90,7 +90,6 @@ namespace MyProfileAND.Profil.FarkliKullanici
             }
         }
 
-
         void TakipEt(int UserId)
         {
             TakipClass TakipClass1 = new TakipClass()
@@ -127,9 +126,6 @@ namespace MyProfileAND.Profil.FarkliKullanici
             public int to_user_id { get; set; }
         }
 
-
-
-
         SpannableStringBuilder Spannla(Color Renk, string textt)
         {
             ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(Renk);
@@ -159,8 +155,29 @@ namespace MyProfileAND.Profil.FarkliKullanici
             }
             else
             {
-                TakipButton.SetImageResource(Resource.Drawable.users_add);
-                TakipDurumm = false;
+                UserGizlilik();
+                if (userPrivacy.no_follow_up_request == false)
+                {
+                    TakipButton.SetImageResource(Resource.Drawable.users_add);
+                    TakipDurumm = false;
+                }
+                else
+                {
+                    TakipButton.Visibility = ViewStates.Gone;
+                    TakipDurumm = false;
+                }
+                
+            }
+        }
+        UserPrivacy userPrivacy = new UserPrivacy();
+        void UserGizlilik()
+        {
+            WebService webService = new WebService();
+            var Donus = webService.OkuGetir("user/" + BilgileriGosterilecekKullanici.UserID.ToString() + "/getUserPrivacySettings");
+            if (Donus != null)
+            {
+                var aaa = Donus.ToString();
+                userPrivacy = Newtonsoft.Json.JsonConvert.DeserializeObject<UserPrivacy>(Donus.ToString());
             }
         }
         void TakipcileriGetir()
@@ -174,8 +191,6 @@ namespace MyProfileAND.Profil.FarkliKullanici
                 TakipDurum();
             }
         }
-
-
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             switch (item.ItemId)
@@ -196,23 +211,25 @@ namespace MyProfileAND.Profil.FarkliKullanici
             ft.Replace(Resource.Id.content_frame, ProfilBaseFragment1);//
             ft.Commit();
         }
-
-
-
         public override void OnBackPressed()
         {
             this.Finish();
         }
-
-
-
-
-
         public class TakipEttiklerim_RootObject
         {
             public int from_user_id { get; set; }
             public int to_user_id { get; set; }
         }
 
+        public class UserPrivacy
+        {
+            public int id { get; set; }
+            public int user_id { get; set; }
+            public bool visibility_on_the_map { get; set; }
+            public bool no_message { get; set; }
+            public bool no_follow_up_request { get; set; }
+            public string created_at { get; set; }
+            public string updated_at { get; set; }
+        }
     }
 }

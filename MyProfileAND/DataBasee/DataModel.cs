@@ -61,4 +61,13 @@ namespace MyProfileAND.DataBasee
 
     }
 
+    public class GIZLILIK
+    {
+        [PrimaryKey, AutoIncrement]
+        public int id { get; set; }
+        public bool visibility_on_the_map { get; set; }
+        public bool no_message { get; set; }
+        public bool no_follow_up_request { get; set; }
+    }
+
 }

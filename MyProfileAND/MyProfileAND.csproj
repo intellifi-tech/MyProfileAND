@@ -124,6 +124,7 @@
     <Compile Include="Profil\Galeri\GaleriRecyclerViewDataModel.cs" />
     <Compile Include="Profil\ProfilBaseFragment.cs" />
     <Compile Include="Profil\ProfilDetaylari\ProfilDetaylariBaseFragment.cs" />
+    <Compile Include="Profil\ProfilDuzenle\GizlilikAyarlari\GizlilikDuzenleDialogFragment.cs" />
     <Compile Include="Profil\ProfilDuzenle\KariyerGecmisiEkle.cs" />
     <Compile Include="Profil\ProfilDuzenle\ProfilDuzenleBaseActivity.cs" />
     <Compile Include="Profil\ProfilDuzenle\SektorSecDialogView.cs" />
@@ -2002,6 +2003,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\styles.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\GizlilikDuzenleDialogFragment.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

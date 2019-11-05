@@ -95,6 +95,11 @@ namespace MyProfileAND.Profil
                 KapakDegisHazne.Visibility = ViewStates.Gone;
                 ProfilDuzenleHazne.Visibility = ViewStates.Gone;
                 ProfilFotoGuncelleButton.Visibility = ViewStates.Gone;
+                UserGizlilik();
+                if (userPrivacy.no_message==true)
+                {
+                    MesatAtHazne.Visibility = ViewStates.Gone;
+                }
             }
             else
             {
@@ -106,6 +111,19 @@ namespace MyProfileAND.Profil
             KullaniciBilgileriniYansit();
             return RootView;
         }
+
+        UserPrivacy userPrivacy = new UserPrivacy();
+        void UserGizlilik()
+        {
+            WebService webService = new WebService();
+            var Donus = webService.OkuGetir("user/" + BilgileriGosterilecekKullanici.UserID.ToString() + "/getUserPrivacySettings");
+            if (Donus != null)
+            {
+                var aaa = Donus.ToString();
+                userPrivacy = Newtonsoft.Json.JsonConvert.DeserializeObject<UserPrivacy>(Donus.ToString());
+            }
+        }
+
 
         private void MesajAtText_Click(object sender, EventArgs e)
         {
@@ -202,7 +220,6 @@ namespace MyProfileAND.Profil
             }
         }
 
-
         public byte[] ResizeImageAndroid(string FileDesc, byte[] imageData, float width, float height)
         {
 
@@ -279,9 +296,6 @@ namespace MyProfileAND.Profil
 
             }
         }
-
-
-
 
         void FotoGuncelle(string base644,int Durum)
         {
@@ -530,9 +544,6 @@ namespace MyProfileAND.Profil
             public User user { get; set; }
         }
 
-
-
-
         public class MyFollower
         {
             public int id { get; set; }
@@ -563,6 +574,17 @@ namespace MyProfileAND.Profil
             public string created_at { get; set; }
             public string updated_at { get; set; }
             public List<MyFollower> my_followers { get; set; }
+        }
+
+        public class UserPrivacy
+        {
+            public int id { get; set; }
+            public int user_id { get; set; }
+            public bool visibility_on_the_map { get; set; }
+            public bool no_message { get; set; }
+            public bool no_follow_up_request { get; set; }
+            public string created_at { get; set; }
+            public string updated_at { get; set; }
         }
 
     }

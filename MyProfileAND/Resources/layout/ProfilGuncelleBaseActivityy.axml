@@ -4,44 +4,60 @@
 	android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-	<RelativeLayout
-		android:orientation="vertical"
-		android:layout_width="match_parent"
-		android:layout_height="64dp"
-		android:id="@+id/toolbarlinear"
-		android:animateLayoutChanges="true"
-		android:minWidth="25px"
-		android:minHeight="25px">
-		<include
-			layout="@layout/app_bar"
-			android:elevation="4dp"
-			android:layout_height="65.0dp" />
-		<FFImageLoading.Views.ImageViewAsync
-			android:layout_centerVertical="true"
-			android:layout_margin="8dp"
-			android:id="@+id/imgPortada_item2"
-			android:scaleType="centerInside"
-			android:layout_width="64dp"
-			android:layout_height="64dp"
-			android:src="@drawable/auser" />
-		<TextView
-			android:textSize="18sp"
-			android:textColor="#000000"
-			android:layout_centerInParent="true"
-			android:text="Profil Düzenle"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:id="@+id/textView1" />
-		<ImageButton
-			android:tint="@color/colorPrimaryDark"
-			android:scaleType="centerInside"
-			android:background="@null"
-			android:src="@drawable/check"
-			android:layout_width="64dp"
-			android:layout_height="match_parent"
-			android:layout_alignParentRight="true"
-			android:id="@+id/kaydetbutton" />
-	</RelativeLayout>
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:id="@+id/toolbarlinear"
+        android:animateLayoutChanges="true"
+        android:minWidth="25px"
+        android:minHeight="25px">
+        <include
+            layout="@layout/app_bar"
+            android:elevation="4dp"
+            android:layout_height="65.0dp" />
+        <FFImageLoading.Views.ImageViewAsync
+            android:layout_centerVertical="true"
+            android:layout_margin="8dp"
+            android:id="@+id/imgPortada_item2"
+            android:scaleType="centerInside"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/auser" />
+        <TextView
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:layout_centerInParent="true"
+            android:text="Profil Düzenle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+             android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout5">
+        <ImageButton
+            android:tint="@color/colorPrimaryDark"
+            android:scaleType="centerInside"
+            android:background="@null"
+            android:src="@drawable/setting_2"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:id="@+id/gizlilikbutton" />
+        <ImageButton
+            android:tint="@color/colorPrimaryDark"
+            android:scaleType="centerInside"
+            android:background="@null"
+            android:src="@drawable/check"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:id="@+id/kaydetbutton" />
+        </LinearLayout>
+    </RelativeLayout>
 	<LinearLayout
 		  android:background="#eee"
 		  android:orientation="horizontal"
