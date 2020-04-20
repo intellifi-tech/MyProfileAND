@@ -75,12 +75,12 @@ namespace MyProfileAND.Favoriler.Global
             viewholder.EventAciklama.Text = eventt.user_attended_event.event_description;
 
 
-            ImageService.Instance.LoadUrl(eventt.user_attended_event.user.profile_photo)
+            ImageService.Instance.LoadUrl("http://23.97.222.30"+eventt.user_attended_event.user.profile_photo)
                                                   .Transform(new CircleTransformation(15, "#FFFFFF"))
                                                   .Into(viewholder.KullaniciProfilFoto);
 
 
-            ImageService.Instance.LoadUrl(eventt.user_attended_event.event_image)
+            ImageService.Instance.LoadUrl("http://23.97.222.30"+eventt.user_attended_event.event_image)
                                                   .Into(viewholder.EventFoto);
             viewholder.GirisSaati.Text = "";
             viewholder.CikisSaati.Text = "";

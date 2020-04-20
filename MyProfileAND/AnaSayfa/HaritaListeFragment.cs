@@ -154,9 +154,6 @@ namespace MyProfileAND.AnaSayfa
         }
     }
 
-
-
-
     public class UserPrivacy
     {
         public int id { get; set; }

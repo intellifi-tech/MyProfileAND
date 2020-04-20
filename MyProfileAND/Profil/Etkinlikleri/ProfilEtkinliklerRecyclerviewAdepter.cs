@@ -66,7 +66,7 @@ namespace MyProfileAND.Profil.Etkinlikleri
             HolderForAnimation = holder as ProfilEtkinliklerRecyclerViewHolder;
             var item = mData[position];
           
-            ImageService.Instance.LoadUrl(item.event_image)
+            ImageService.Instance.LoadUrl("http://23.97.222.30"+item.event_image)
                                                   .Into(viewholder.EventFoto);
            
             viewholder.EventTitle.Text = item.Event.title;

@@ -331,7 +331,7 @@ namespace MyProfileAND.Profil
                     };
 
                     DataBase.USER_INFO_Guncelle(GuncellenecekDTO);
-                    ImageService.Instance.LoadUrl(GuncellenecekDTO.profile_photo)
+                    ImageService.Instance.LoadUrl("http://23.97.222.30"+GuncellenecekDTO.profile_photo)
                                                     .Transform(new CircleTransformation(15, "#FFFFFF"))
                                                     .Into(ProfilFotografi);
 
@@ -375,7 +375,7 @@ namespace MyProfileAND.Profil
                     };
 
                     DataBase.USER_INFO_Guncelle(GuncellenecekDTO);
-                    ImageService.Instance.LoadUrl(GuncellenecekDTO.cover_photo).Into(KapakFotografi);
+                    ImageService.Instance.LoadUrl("http://23.97.222.30"+GuncellenecekDTO.cover_photo).Into(KapakFotografi);
                     AlertHelper.AlertGoster("Kapak Fotoğrafınız Güncellendi.", this.Activity);
                     KullaniciBilgileriniYansit(false);
                     return;
@@ -405,14 +405,14 @@ namespace MyProfileAND.Profil
                 {
                     if (!string.IsNullOrEmpty(Kullanici.profile_photo))
                     {
-                        ImageService.Instance.LoadUrl(Kullanici.profile_photo)
+                        ImageService.Instance.LoadUrl("http://23.97.222.30"+Kullanici.profile_photo)
                                                         .Transform(new CircleTransformation(15, "#FFFFFF"))
                                                         .Into(ProfilFotografi);
                     }
                     if (!string.IsNullOrEmpty(Kullanici.cover_photo))
                     {
                         KapakFotografi.ClearColorFilter();
-                        ImageService.Instance.LoadUrl(Kullanici.cover_photo).Into(KapakFotografi);
+                        ImageService.Instance.LoadUrl("http://23.97.222.30"+Kullanici.cover_photo).Into(KapakFotografi);
                     }
                 }
                 

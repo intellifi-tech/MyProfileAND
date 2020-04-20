@@ -119,13 +119,13 @@ namespace MyProfileAND.Mesajlar
 
             if (mMesajlar[position].from_user_id.ToString() == MeId)
             {
-                ImageService.Instance.LoadUrl(((ChatActivity)mContext).UserImagePath)
+                ImageService.Instance.LoadUrl("http://23.97.222.30"+((ChatActivity)mContext).UserImagePath)
                                                     .Transform(new CircleTransformation(15, "#FFFFFF"))
                                                     .Into(holder.ProfilFoto);
             }
             else
             {
-                ImageService.Instance.LoadUrl(((ChatActivity)mContext).HostImagePath)
+                ImageService.Instance.LoadUrl("http://23.97.222.30"+((ChatActivity)mContext).HostImagePath)
                                                     .Transform(new CircleTransformation(15, "#FFFFFF"))
                                                     .Into(holder.ProfilFoto);
             }

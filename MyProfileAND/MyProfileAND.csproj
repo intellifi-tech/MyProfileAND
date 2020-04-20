@@ -1966,9 +1966,6 @@
     <AndroidResource Include="Resources\mipmap-xhdpi\like_icon_img.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\me_photo.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xhdpi\tower.png" />
   </ItemGroup>
   <ItemGroup>
@@ -2008,6 +2005,9 @@
     <AndroidResource Include="Resources\layout\GizlilikDuzenleDialogFragment.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xhdpi\me_photo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

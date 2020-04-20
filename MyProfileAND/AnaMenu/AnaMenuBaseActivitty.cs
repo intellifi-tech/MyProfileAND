@@ -56,7 +56,7 @@ namespace MyProfileAND.AnaMenu
             {
                 if (Userr[0].profile_photo != "")
                 {
-                    ImageService.Instance.LoadUrl(Userr[0].profile_photo)
+                    ImageService.Instance.LoadUrl("http://23.97.222.30"+Userr[0].profile_photo)
                                                     .Transform(new CircleTransformation(15, "#FFFFFF"))
                                                     .Into(UserImage);
                 }

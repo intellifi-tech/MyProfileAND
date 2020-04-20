@@ -50,7 +50,7 @@ namespace MyProfileAND.Favoriler.TakipEttiklerim.KisiBazliListe
             FavorilerRecyclerViewDataModel1 = Newtonsoft.Json.JsonConvert.DeserializeObject<List<UserAttendedEvent>>(KisininEventListesiClass.EventListJson);
             KisiAdi = FindViewById<TextView>(Resource.Id.textView1);
             KullaniciProfilFoto = FindViewById<ImageViewAsync>(Resource.Id.imgPortada_item2);
-            ImageService.Instance.LoadUrl(KisininEventListesiClass.UserImage)
+            ImageService.Instance.LoadUrl("http://23.97.222.30"+KisininEventListesiClass.UserImage)
                                                   .Transform(new CircleTransformation(15, "#FFFFFF"))
                                                   .Into(KullaniciProfilFoto);
             KisiAdi.Text = KisininEventListesiClass.UserName;

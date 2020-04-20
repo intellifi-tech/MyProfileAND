@@ -152,7 +152,7 @@ namespace MyProfileAND.Favoriler.EtkinlikDetay.EtkinlikKatilimcilari
                     holder.KisiAdi.Text = item.name + " " + item.surname;
                     holder.EnSonMesaj.Text = item.title;
                     holder.SonMesajSaati.Text = "";
-                    ImageService.Instance.LoadUrl(item.profile_photo)
+                    ImageService.Instance.LoadUrl("http://23.97.222.30"+item.profile_photo)
                                                     .Transform(new CircleTransformation(5, "#FFFFFF"))
                                                     .Into(holder.ProfilFoto);
 

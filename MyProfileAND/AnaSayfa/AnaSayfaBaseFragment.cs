@@ -93,7 +93,7 @@ namespace MyProfileAND.AnaSayfa
             {
                 if (_map != null)
                 {
-                    CameraUpdate cameraUpdate = CameraUpdateFactory.NewLatLngZoom(new LatLng(LastUserLocation.Latitude, LastUserLocation.Longitude), 10);
+                    CameraUpdate cameraUpdate = CameraUpdateFactory.NewLatLngZoom(new LatLng(LastUserLocation.Latitude, LastUserLocation.Longitude), 18);
                     _map.MoveCamera(cameraUpdate);
                 }
             }
@@ -211,7 +211,7 @@ namespace MyProfileAND.AnaSayfa
         void OpenLoading()
         {
             CustomLoadingScreen1 = new CustomLoadingScreen("Konumunuz Alıyor...");
-            //CustomLoadingScreen1.Cancelable = false;
+            CustomLoadingScreen1.Cancelable = false;
             CustomLoadingScreen1.Show(this.Activity.SupportFragmentManager, "CustomLoadingScreen1");
         }
         bool KonumKontrol()
@@ -301,8 +301,8 @@ namespace MyProfileAND.AnaSayfa
             {
                 base.OnLocationResult(result);
                 AnaSayfaBaseFragment1.OnLocationChangedd(result.LastLocation);
-                Console.WriteLine("Güncellendiiiiiiiiiiiiiii");
-                Toast.MakeText(AnaSayfaBaseFragment1.Activity, "Güncellendiiiiiiiiiiiiiii", ToastLength.Long).Show();
+                //Console.WriteLine("Güncellendiiiiiiiiiiiiiii");
+                //Toast.MakeText(AnaSayfaBaseFragment1.Activity, "Güncellendiiiiiiiiiiiiiii", ToastLength.Long).Show();
             }
         }
 

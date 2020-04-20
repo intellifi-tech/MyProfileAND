@@ -176,7 +176,7 @@ namespace MyProfileAND.Favoriler.EtkinlikDetay
             {
                 base.OnLocationResult(result);
                 EtkinlikDetayBaseActivity1.GelenKonumuYansit(result.LastLocation);
-                Toast.MakeText(EtkinlikDetayBaseActivity1, "Güncellendiiiiiiiiiiiiiii", ToastLength.Long).Show();
+                //Toast.MakeText(EtkinlikDetayBaseActivity1, "Güncellendiiiiiiiiiiiiiii", ToastLength.Long).Show();
             }
         }
 
@@ -277,10 +277,10 @@ namespace MyProfileAND.Favoriler.EtkinlikDetay
             if (Donus != null)
             {
                 EtkinlikDetayi_RootObject1 = Newtonsoft.Json.JsonConvert.DeserializeObject<EtkinlikDetayi_RootObject>(Donus);
-                ImageService.Instance.LoadUrl(EtkinlikDetayi_RootObject1.user_attended_event[0].event_image)
+                ImageService.Instance.LoadUrl("http://23.97.222.30"+EtkinlikDetayi_RootObject1.user_attended_event[0].event_image)
                                                   .Into(EtkinlikImage);
 
-                ImageService.Instance.LoadUrl(EtkinlikDetayi_RootObject1.user_attended_event[0].user.profile_photo)
+                ImageService.Instance.LoadUrl("http://23.97.222.30"+EtkinlikDetayi_RootObject1.user_attended_event[0].user.profile_photo)
                                                   .Transform(new CircleTransformation(15, "#FFFFFF"))
                                                   .Into(UserImage);
 
@@ -370,7 +370,7 @@ namespace MyProfileAND.Favoriler.EtkinlikDetay
 
                 var UserPhotoo = parcaView.FindViewById<ImageViewAsync>(Resource.Id.imgPortada_item2);
 
-                ImageService.Instance.LoadUrl(EtkinlikDetayi_RootObject1.user_attended_event[0].user.profile_photo)
+                ImageService.Instance.LoadUrl("http://23.97.222.30"+EtkinlikDetayi_RootObject1.user_attended_event[0].user.profile_photo)
                                                 .Transform(new CircleTransformation(15, "#FFFFFF"))
                                                 .Into(UserPhotoo);
                 YorumLinear.AddView(parcaView);

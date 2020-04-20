@@ -67,7 +67,7 @@ namespace MyProfileAND.Favoriler.TakipEttiklerim
             var item = TakipEttiklerimDataModel1[position];
             viewholder.AdSoyad.Text = item.name;
             viewholder.AdSoyad.Selected = true;
-            ImageService.Instance.LoadUrl(item.profile_photo)
+            ImageService.Instance.LoadUrl("http://23.97.222.30"+item.profile_photo)
               .Transform(new CircleTransformation(15, "#FFFFFF"))
               .Into(viewholder.KisiImage);
 

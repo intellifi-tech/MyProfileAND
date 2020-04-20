@@ -108,7 +108,7 @@ namespace MyProfileAND.Mesajlar
             {
                 HostModelll =   Newtonsoft.Json.JsonConvert.DeserializeObject<User_RootObject>(Donus.ToString());
                 HostNameText.Text = HostModelll.name + " " + HostModelll.surname;
-                ImageService.Instance.LoadUrl(HostModelll.profile_photo)
+                ImageService.Instance.LoadUrl("http://23.97.222.30"+HostModelll.profile_photo)
                                                     .Transform(new CircleTransformation(5, "#FFFFFF"))
                                                     .Into(HostImageView);
                 HostImagePath = HostModelll.profile_photo;

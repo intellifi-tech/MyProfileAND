@@ -48,6 +48,7 @@
 				android:layout_height="match_parent"
 				android:id="@+id/etkinlikkatilimci" />
 			<ImageButton
+                android:visibility="gone"
 				android:tint="@color/colorPrimaryDark"
 				android:scaleType="centerInside"
 				android:background="@null"

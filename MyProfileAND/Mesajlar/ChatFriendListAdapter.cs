@@ -94,7 +94,7 @@ namespace MyProfileAND.Mesajlar
                     holder.KisiAdi.Text = item.from_user.name + " " + item.from_user.surname;
                     holder.EnSonMesaj.Text = item.message;
                     holder.SonMesajSaati.Text = Convert.ToDateTime(item.created_at).ToShortTimeString();
-                    ImageService.Instance.LoadUrl(item.from_user.profile_photo)
+                    ImageService.Instance.LoadUrl("http://23.97.222.30"+item.from_user.profile_photo)
                                                     .Transform(new CircleTransformation(5, "#FFFFFF"))
                                                     .Into(holder.ProfilFoto);
                     if (item.status == 0)
@@ -122,7 +122,7 @@ namespace MyProfileAND.Mesajlar
                         holder.OkunmamisBadge.Visibility = ViewStates.Gone;
                     }
 
-                    ImageService.Instance.LoadUrl(item.to_user.profile_photo)
+                    ImageService.Instance.LoadUrl("http://23.97.222.30"+item.to_user.profile_photo)
                                                     .Transform(new CircleTransformation(5, "#FFFFFF"))
                                                     .Into(holder.ProfilFoto);
                 }

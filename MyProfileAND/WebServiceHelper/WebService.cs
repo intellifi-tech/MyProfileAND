@@ -20,7 +20,7 @@ namespace MyProfileAND.WebServiceHelper
 {
     class WebService
     {
-        string kokurl = "https://demo.intellifi.tech/demo/MyProfile/web/public/api/";
+        string kokurl = "http://23.97.222.30/web/public/api/";//https://demo.intellifi.tech/demo/MyProfile/web/public/api/
         public string ServisIslem(string url, string istekler, bool isLogin = false, string Method = "POST")
         {
             try

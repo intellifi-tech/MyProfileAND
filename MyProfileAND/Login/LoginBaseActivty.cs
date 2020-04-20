@@ -46,8 +46,8 @@ namespace MyProfileAND.Login
 
             GirisYap.Click += GirisYap_Click;
 
-            EmailText.Text = "mesut@intellifi.tech";
-            SifreText.Text = "1234qwer";
+            //EmailText.Text = "mesut@intellifi.tech";
+            //SifreText.Text = "1234qwer";
 
         }
 
@@ -92,7 +92,7 @@ namespace MyProfileAND.Login
             {
                 return false;
             }
-            else if (SifreText.Text.Length < 6)
+            else if (SifreText.Text.Length < 1/*6*/)
             {
                 return false;
             }

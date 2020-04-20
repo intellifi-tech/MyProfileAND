@@ -79,11 +79,11 @@ namespace MyProfileAND.AnaSayfa
             if (item.user != null)
             {
 
-                ImageService.Instance.LoadUrl(item.user.cover_photo)
+                ImageService.Instance.LoadUrl("http://23.97.222.30"+item.user.cover_photo)
                                                     .Into(viewholder.UserCover);
 
 
-                ImageService.Instance.LoadUrl(item.user.profile_photo)
+                ImageService.Instance.LoadUrl("http://23.97.222.30"+item.user.profile_photo)
                                                     .Transform(new CircleTransformation(0, "#FFFFFF"))
                                                     .Into(viewholder.UserProfilFoto);
 
@@ -183,7 +183,7 @@ namespace MyProfileAND.AnaSayfa
                             .Error(Resource.Mipmap.ic_launcher)
                                      .Into(Imagevieww);
 
-                            //ImageService.Instance.LoadUrl(path).WithCache(FFImageLoading.Cache.CacheType.All).Into(Imagevieww);
+                            //ImageService.Instance.LoadUrl("http://23.97.222.30"+path).WithCache(FFImageLoading.Cache.CacheType.All).Into(Imagevieww);
                         });
                     }
                 }

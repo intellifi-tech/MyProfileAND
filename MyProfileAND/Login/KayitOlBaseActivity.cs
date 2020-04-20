@@ -46,7 +46,13 @@ namespace MyProfileAND.Login
             GirisYap.Click += GirisYap_Click;
 
             Sozlesmeler.TextFormatted = Html.FromHtml(
-            " Giriş yaparak " + "<font color=" + "#E30715" + "><b><a href=\"https://www.intellifi.tech\">Kullanım koşulları</a></b></font>  ve  <font color=" + "#E30715" + "><b><a href=\"https://www.intellifi.tech\">Gizlilik politikasını</a></b></font>" + " kabul etmiş olursunuz.");
+            " Giriş yaparak " + "<font color=" + "#E30715" + "><b><a href=\"http://23.97.222.30\">Kullanım koşulları</a></b></font>  ve  <font color=" + "#E30715" + "><b><a href=\"http://23.97.222.30\">Gizlilik politikasını</a></b></font>" + " kabul etmiş olursunuz.");
+
+
+            //AdText.Text = "Mesut";
+            //SoyadText.Text = "Polat";
+            //EmialText.Text = "demomobiluser2@intellifi.tech";
+            //SifreText.Text = "qwer1234";
 
         }
 

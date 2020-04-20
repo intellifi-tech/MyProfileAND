@@ -37,7 +37,7 @@ namespace MyProfileAND.GenericClass
 
             if (!String.IsNullOrEmpty(ProfilImage))
             {
-                ImageService.Instance.LoadUrl(ProfilImage)
+                ImageService.Instance.LoadUrl("http://23.97.222.30"+ProfilImage)
                                                     .Transform(new CircleTransformation(0, "#FFFFFF"))
                                                     .Into(ProfilFotoo);
             }

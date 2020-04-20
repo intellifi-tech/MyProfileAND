@@ -114,54 +114,98 @@ namespace MyProfileAND.Profil.ProfilDuzenle
 
         private void KaydetButton_Click(object sender, EventArgs e)
         {
-            WebService webService = new WebService();
-            var Kullanici = DataBase.USER_INFO_GETIR()[0];
-            Kullanici.name = AdText.Text;
-            Kullanici.surname = SoyadText.Text;
-            Kullanici.short_biography = Biografi.Text;
-            if (!String.IsNullOrEmpty(DogumTarihi.Text))
+            if (Bosmu())
             {
-                Kullanici.date_of_birth = Convert.ToDateTime(DogumTarihi.Text).ToString("yyyy-MM-dd");
-            }
-            Kullanici.company_title = SirketAdi.Text;
-            Kullanici.sector_id = SektorlerSpin.Tag.ToString();
-            Kullanici.title = Titlee.Text;
-
-            string jsonString = JsonConvert.SerializeObject(Kullanici);
-            var Donus = webService.ServisIslem("user/update", jsonString, Method: "PUT");
-            if (Donus != "Hata")
-            {
-                var GuncelKullanici = Newtonsoft.Json.JsonConvert.DeserializeObject<UserGuncellenmisDataModel>(Donus);
-                USER_INFO GuncellenecekDTO = new USER_INFO()
+                WebService webService = new WebService();
+                var Kullanici = DataBase.USER_INFO_GETIR()[0];
+                Kullanici.name = AdText.Text;
+                Kullanici.surname = SoyadText.Text;
+                Kullanici.short_biography = Biografi.Text;
+                if (!String.IsNullOrEmpty(DogumTarihi.Text))
                 {
-                    cover_photo = GuncelKullanici.user.cover_photo,
-                    api_token = Kullanici.api_token,
-                    career_history = GuncelKullanici.user.career_history,
-                    company_id = GuncelKullanici.user.company_id,
-                    credentials = GuncelKullanici.user.credentials,
-                    date_of_birth = GuncelKullanici.user.date_of_birth,
-                    email = GuncelKullanici.user.email,
-                    id = GuncelKullanici.user.id,
-                    localid = Kullanici.localid,
-                    name = GuncelKullanici.user.name,
-                    profile_photo = GuncelKullanici.user.profile_photo,
-                    sector_id = GuncelKullanici.user.sector_id,
-                    short_biography = GuncelKullanici.user.short_biography,
-                    status = GuncelKullanici.user.status,
-                    surname = GuncelKullanici.user.surname,
-                    title = GuncelKullanici.user.title,
+                    Kullanici.date_of_birth = Convert.ToDateTime(DogumTarihi.Text).ToString("yyyy-MM-dd");
+                }
+                Kullanici.company_title = SirketAdi.Text;
+                Kullanici.sector_id = SektorlerSpin.Tag.ToString();
+                Kullanici.title = Titlee.Text;
 
-                };
+                string jsonString = JsonConvert.SerializeObject(Kullanici);
+                var Donus = webService.ServisIslem("user/update", jsonString, Method: "PUT");
+                if (Donus != "Hata")
+                {
+                    var GuncelKullanici = Newtonsoft.Json.JsonConvert.DeserializeObject<UserGuncellenmisDataModel>(Donus);
+                    USER_INFO GuncellenecekDTO = new USER_INFO()
+                    {
+                        cover_photo = GuncelKullanici.user.cover_photo,
+                        api_token = Kullanici.api_token,
+                        career_history = GuncelKullanici.user.career_history,
+                        company_id = GuncelKullanici.user.company_id,
+                        credentials = GuncelKullanici.user.credentials,
+                        date_of_birth = GuncelKullanici.user.date_of_birth,
+                        email = GuncelKullanici.user.email,
+                        id = GuncelKullanici.user.id,
+                        localid = Kullanici.localid,
+                        name = GuncelKullanici.user.name,
+                        profile_photo = GuncelKullanici.user.profile_photo,
+                        sector_id = GuncelKullanici.user.sector_id,
+                        short_biography = GuncelKullanici.user.short_biography,
+                        status = GuncelKullanici.user.status,
+                        surname = GuncelKullanici.user.surname,
+                        title = GuncelKullanici.user.title,
 
-                DataBase.USER_INFO_Guncelle(GuncellenecekDTO);
-                var NewUser = DataBase.USER_INFO_GETIR()[0];
-                
-                AlertHelper.AlertGoster("Profil Bilgileriniz Güncellendi.", this);
-                this.Finish();
-                return;
+                    };
+
+                    DataBase.USER_INFO_Guncelle(GuncellenecekDTO);
+                    var NewUser = DataBase.USER_INFO_GETIR()[0];
+
+                    AlertHelper.AlertGoster("Profil Bilgileriniz Güncellendi.", this);
+                    this.Finish();
+                    return;
+                }
             }
         }
-
+        bool Bosmu()
+        {
+            if (string.IsNullOrEmpty(AdText.Text.Trim()))
+            {
+                AlertHelper.AlertGoster("Lütfen Adınızı Yazın.", this);
+                return false;
+            }
+            else if(string.IsNullOrEmpty(SoyadText.Text.Trim()))
+            {
+                AlertHelper.AlertGoster("Lütfen Soyadını Yazın.", this);
+                return false;
+            }
+            else if(string.IsNullOrEmpty(Biografi.Text.Trim()))
+            {
+                AlertHelper.AlertGoster("Lütfen Hakkında Yazın.", this);
+                return false;
+            }
+            else if(string.IsNullOrEmpty(DogumTarihi.Text.Trim()))
+            {
+                AlertHelper.AlertGoster("Lütfen Doğum Tarihinizi Yazın.", this);
+                return false;
+            }
+            else if(string.IsNullOrEmpty(SirketAdi.Text.Trim()))
+            {
+                AlertHelper.AlertGoster("Lütfen Şirketinizi Yazın.", this);
+                return false;
+            }
+            else if(string.IsNullOrEmpty(Titlee.Text.Trim()))
+            {
+                AlertHelper.AlertGoster("Lütfen Ünvanınızı Yazın.", this);
+                return false;
+            }
+            else if(string.IsNullOrEmpty(SektorlerSpin.Text.Trim()))
+            {
+                AlertHelper.AlertGoster("Lütfen Sektörünüzü Belirtin.", this);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         private void SektorlerSpin_Click(object sender, EventArgs e)
         {
             var SektorSecDialogView1 = new SektorSecDialogView(this);
@@ -218,7 +262,7 @@ namespace MyProfileAND.Profil.ProfilDuzenle
 
                 if (!string.IsNullOrEmpty(Kullanici[0].profile_photo))
                 {
-                    ImageService.Instance.LoadUrl(Kullanici[0].profile_photo)
+                    ImageService.Instance.LoadUrl("http://23.97.222.30"+Kullanici[0].profile_photo)
                                                     .Transform(new CircleTransformation(15, "#FFFFFF"))
                                                     .Into(ProfilFoto);
                 }
@@ -238,6 +282,7 @@ namespace MyProfileAND.Profil.ProfilDuzenle
                 }
             }
         }
+        
         void GetCompanyID(string ID)
         {
             new System.Threading.Thread(new System.Threading.ThreadStart(delegate

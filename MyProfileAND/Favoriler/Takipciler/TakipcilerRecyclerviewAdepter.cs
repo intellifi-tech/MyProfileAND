@@ -69,12 +69,12 @@ namespace MyProfileAND.Favoriler.Takipciler
             HolderForAnimation = holder as TakipcilerRecyclerViewHolder;
             var item = mData[position];
 
-            ImageService.Instance.LoadUrl(item.UserInfo.profile_photo)
+            ImageService.Instance.LoadUrl("http://23.97.222.30"+item.UserInfo.profile_photo)
                                                   .Transform(new CircleTransformation(15, "#FFFFFF"))
                                                   .Into(viewholder.KullaniciProfilFoto);
 
 
-            ImageService.Instance.LoadUrl(item.event_image)
+            ImageService.Instance.LoadUrl("http://23.97.222.30"+item.event_image)
                                                   .Into(viewholder.EventFoto);
 
 

@@ -491,14 +491,17 @@ namespace MyProfileAND.Favoriler.MevcutEtkinligeKatil
                         {
                             var aaaa = Donuss.ToString();
                             var Detayy = Newtonsoft.Json.JsonConvert.DeserializeObject<RootObject2>(aaaa);
-                            mContext.RunOnUiThread(delegate ()
+                            if (Detayy.user_attended_event.Count > 0)
                             {
-                                EtkinlikAdii.Text = Detayy.title;
-                                ImageService.Instance.LoadUrl(Detayy.user_attended_event[0].event_image)
-                                                    .Transform(new CircleTransformation(15, "#FFFFFF"))
-                                                    .Into(EtkinlikImg);
-                                EtkinlikKatilimci.Text = Detayy.user_attended_event.Count + " Kişi bu etkinliğe katıldı.";
-                            });
+                                mContext.RunOnUiThread(delegate ()
+                                {
+                                    EtkinlikAdii.Text = Detayy.title;
+                                    ImageService.Instance.LoadUrl("http://23.97.222.30"+Detayy.user_attended_event[0].event_image)
+                                                        .Transform(new CircleTransformation(15, "#FFFFFF"))
+                                                        .Into(EtkinlikImg);
+                                    EtkinlikKatilimci.Text = Detayy.user_attended_event.Count + " Kişi bu etkinliğe katıldı.";
+                                });
+                            }
                         }
                         catch
                         {

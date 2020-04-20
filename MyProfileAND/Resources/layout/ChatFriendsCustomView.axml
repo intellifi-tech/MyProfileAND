@@ -43,7 +43,7 @@
 		<TextView
             android:maxLines="2"
             android:ellipsize="end"
-            android:textColor="#fff"
+            android:textColor="#686868"
 			android:text="Lorem impus sit dolor amed Lorem impus sit dolor amed "
 			android:textAppearance="?android:attr/textAppearanceSmall"
 			android:layout_width="match_parent"

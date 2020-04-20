@@ -97,7 +97,7 @@ namespace MyProfileAND.Profil.Galeri
                             .Error(Resource.Mipmap.ic_launcher)
                                      .Into(Imagevieww);
 
-                            //ImageService.Instance.LoadUrl(path).WithCache(FFImageLoading.Cache.CacheType.All).Into(Imagevieww);
+                            //ImageService.Instance.LoadUrl("http://23.97.222.30"+path).WithCache(FFImageLoading.Cache.CacheType.All).Into(Imagevieww);
                         });
                     }
                 }
